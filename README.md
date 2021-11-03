@@ -8,10 +8,7 @@ Be sure to have [Node.js](https://nodejs.org/) installed before proceeding.
 # Install dependencies
 npm i
 
-# Compile Sass
-gulp run
-
-# Watch Sass for changes (uses nodemon)
+# Compile & Watch Sass for changes and run local server
 gulp watch
 
 ```
