@@ -1,0 +1,26 @@
+.path,
+#arrow {
+  stroke: white;
+  stroke-width: 20px;
+  fill: none;
+}
+
+ {
+  fill: black;
+  stroke: black;
+  stroke-width: 20;
+}
+
+#svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.icon {
+  text-align: center;
+}
+

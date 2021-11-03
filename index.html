@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link
+      rel="stylesheet"
+      href="assets/css/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/fullpage.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/starter.css">
+    <title>Botza Landing Page </title>
+  </head>
+  <body>
+      <div id="fullpage">
+      <header class="section fp-auto-height">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top pt-3">
+          <div class="container justify-content-between">
+                <a class="navbar-brand" href="/">
+                  <img src="assets/img/Botza Logo.svg" title="Botza" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.4616 4.30739H1.53848C0.688594 4.30739 0 3.6188 0 2.76895C0 1.91911 0.688594 1.23047 1.53848 1.23047H22.4616C23.3114 1.23047 24 1.91906 24 2.76895C24 3.61884 23.3114 4.30739 22.4616 4.30739Z" fill="url(#paint0_linear_174:1927)"/>
+                      <path d="M13.8462 13.5379H1.53848C0.688594 13.5379 0 12.8493 0 11.9994C0 11.1496 0.688594 10.4609 1.53848 10.4609H13.8462C14.696 10.4609 15.3847 11.1495 15.3847 11.9994C15.3847 12.8493 14.696 13.5379 13.8462 13.5379Z" fill="url(#paint1_linear_174:1927)"/>
+                      <path d="M22.461 13.5379H19.9994C19.1496 13.5379 18.4609 12.8493 18.4609 11.9994C18.4609 11.1495 19.1495 10.4609 19.9994 10.4609H22.461C23.3108 10.4609 23.9994 11.1495 23.9994 11.9994C23.9994 12.8493 23.3108 13.5379 22.461 13.5379Z" fill="url(#paint2_linear_174:1927)"/>
+                      <path d="M22.4616 22.7684H1.53848C0.688594 22.7684 0 22.0797 0 21.2299C0 20.38 0.688594 19.6914 1.53848 19.6914H22.4616C23.3114 19.6914 24 20.38 24 21.2299C24 22.0797 23.3114 22.7684 22.4616 22.7684Z" fill="url(#paint3_linear_174:1927)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_174:1927" x1="12" y1="1.23047" x2="12" y2="4.30739" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_174:1927" x1="7.69233" y1="10.4609" x2="7.69233" y2="13.5379" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_174:1927" x1="21.2302" y1="10.4609" x2="21.2302" y2="13.5379" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      <linearGradient id="paint3_linear_174:1927" x1="12" y1="19.6914" x2="12" y2="22.7684" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Product
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item underline" href="#">Link 1</a></li>
+                        <li><a class="dropdown-item underline" href="#">Link 2</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item underline" href="#">Something else here</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Help</a>
+                    </li>
+                  </ul>
+                  <ul class="userLinks navbar-right d-block d-lg-none">
+                    <li><a href="#" class="signIn fw-bolder underline light">Sign In</a></li>
+                    <li><a href="#" class="btn btn-primary">Register</a></li>
+                  </ul>
+                  <ul class="userLinks navbar-right d-none d-lg-flex flex-column flex-lg-row">
+                    <li><a href="#" class="text-white fw-bolder underline light">Sign In</a></li>
+                    <li><a href="#" class="btn btn-white btn-sm"><span class="text-gradient">Register</span></a></li>
+                  </ul>
+                </div>
+          </div>
+        </nav>
+        <section id="header" class="d-flex justify-content-center flex-column">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-5 d-flex justify-content-center flex-column">
+                <h1>One App,<br />
+                <svg id="infinity" width="97" height="45" viewBox="0 0 97 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M73.9294 45.0004C68.0152 45.0167 62.3357 42.6882 58.135 38.5249L30.9425 14.2746L30.8342 14.1664C29.1859 12.5181 27.0858 11.3956 24.7996 10.9409C22.5134 10.4861 20.1436 10.7195 17.9901 11.6115C15.8365 12.5036 13.9958 14.0142 12.7007 15.9523C11.4057 17.8905 10.7144 20.1692 10.7144 22.5002C10.7144 24.8312 11.4057 27.1099 12.7007 29.0481C13.9958 30.9863 15.8365 32.4969 17.9901 33.3889C20.1436 34.281 22.5134 34.5143 24.7996 34.0596C27.0858 33.6048 29.1859 32.4823 30.8342 30.834C31.3316 30.3365 31.9222 29.9419 32.5722 29.6727C33.2221 29.4035 33.9188 29.2649 34.6223 29.2649C35.3258 29.2649 36.0224 29.4035 36.6724 29.6727C37.3224 29.9419 37.9129 30.3365 38.4104 30.834C38.9079 31.3315 39.3025 31.922 39.5717 32.572C39.8409 33.222 39.9795 33.9186 39.9795 34.6221C39.9795 35.3256 39.8409 36.0223 39.5717 36.6722C39.3025 37.3222 38.9079 37.9128 38.4104 38.4102C35.2686 41.5521 31.2669 43.6934 26.9099 44.5642C22.5529 45.435 18.0356 44.9963 13.9275 43.3034C9.81946 41.6105 6.30458 38.7393 3.82604 35.0516C1.34749 31.364 0.0162476 27.025 0.000147775 22.5819C-0.015952 18.1387 1.28381 13.7902 3.73557 10.0847C6.18733 6.37918 9.6813 3.48251 13.777 1.75991C17.8727 0.0373005 22.3867 -0.434121 26.7499 0.40508C31.1131 1.24428 35.1302 3.35653 38.2947 6.47552L65.4874 30.7258L65.5957 30.834C67.2439 32.4823 69.344 33.6048 71.6302 34.0596C73.9164 34.5143 76.2862 34.281 78.4398 33.3889C80.5933 32.4969 82.434 30.9863 83.7291 29.0481C85.0241 27.1099 85.7154 24.8312 85.7154 22.5002C85.7154 20.1692 85.0241 17.8905 83.7291 15.9523C82.434 14.0142 80.5933 12.5036 78.4398 11.6115C76.2862 10.7195 73.9164 10.4861 71.6302 10.9409C69.344 11.3956 67.2439 12.5181 65.5957 14.1664C64.591 15.1711 63.2283 15.7355 61.8075 15.7355C60.3867 15.7355 59.0241 15.1711 58.0194 14.1664C57.0147 13.1618 56.4503 11.7991 56.4503 10.3783C56.4503 8.95749 57.0147 7.59486 58.0194 6.59019C60.6358 3.97376 63.8571 2.04297 67.398 0.968861C70.9389 -0.10525 74.69 -0.289535 78.319 0.432334C81.9481 1.1542 85.3432 2.75994 88.2035 5.10731C91.0638 7.45469 93.301 10.4712 94.717 13.8898C96.133 17.3083 96.684 21.0233 96.3214 24.7056C95.9587 28.388 94.6934 31.9241 92.6377 35.0007C90.582 38.0773 87.7993 40.5994 84.536 42.3437C81.2727 44.0879 77.6296 45.0004 73.9294 45.0004Z" fill="#3A3A3A"/>
+                </svg> Possibilities</h1>
+                <p class="pt-2 pb-lg-4 pe-lg-5">The only ultimate magic wand, that increases functionality of <svg class="slack-icon" width="80" height="20" viewBox="30 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.20686 12.6429C4.20686 13.8054 3.26997 14.7448 2.11075 14.7448C0.951545 14.7448 0.0146484 13.8054 0.0146484 12.6429C0.0146484 11.4805 0.951545 10.541 2.11075 10.541H4.20686V12.6429Z" fill="#E01E5A"/>
+                  <path d="M5.25293 12.6429C5.25293 11.4805 6.18983 10.541 7.34904 10.541C8.50825 10.541 9.44514 11.4805 9.44514 12.6429V17.8977C9.44514 19.0601 8.50825 19.9996 7.34904 19.9996C6.18983 19.9996 5.25293 19.0601 5.25293 17.8977V12.6429Z" fill="#E01E5A"/>
+                  <path d="M7.35001 4.20382C6.1908 4.20382 5.25391 3.26433 5.25391 2.10191C5.25391 0.939492 6.1908 0 7.35001 0C8.50922 0 9.44612 0.939492 9.44612 2.10191V4.20382H7.35001Z" fill="#36C5F0"/>
+                  <path d="M7.35226 5.27148C8.51147 5.27148 9.44836 6.21098 9.44836 7.3734C9.44836 8.53582 8.51147 9.47531 7.35226 9.47531H2.09611C0.936897 9.47531 0 8.53582 0 7.3734C0 6.21098 0.936897 5.27148 2.09611 5.27148H7.35226Z" fill="#36C5F0"/>
+                  <path d="M15.7461 7.3734C15.7461 6.21098 16.683 5.27148 17.8422 5.27148C19.0014 5.27148 19.9383 6.21098 19.9383 7.3734C19.9383 8.53582 19.0014 9.47531 17.8422 9.47531H15.7461V7.3734Z" fill="#2EB67D"/>
+                  <path d="M14.7 7.37261C14.7 8.53503 13.7631 9.47452 12.6039 9.47452C11.4447 9.47452 10.5078 8.53503 10.5078 7.37261V2.10191C10.5078 0.939491 11.4447 0 12.6039 0C13.7631 0 14.7 0.939491 14.7 2.10191V7.37261Z" fill="#2EB67D"/>
+                  <path d="M12.6039 15.7949C13.7631 15.7949 14.7 16.7344 14.7 17.8968C14.7 19.0593 13.7631 19.9987 12.6039 19.9987C11.4447 19.9987 10.5078 19.0593 10.5078 17.8968V15.7949H12.6039Z" fill="#ECB22E"/>
+                  <path d="M12.6039 14.7448C11.4447 14.7448 10.5078 13.8054 10.5078 12.6429C10.5078 11.4805 11.4447 10.541 12.6039 10.541H17.8601C19.0193 10.541 19.9562 11.4805 19.9562 12.6429C19.9562 13.8054 19.0193 14.7448 17.8601 14.7448H12.6039Z" fill="#ECB22E"/>
+                  <text x="26" y="16" class="color-slack">Slack</text>
+                  </svg> by <span class="color-dark">10x</span>.
+                </p>
+                <a href="#" class="btn btn-primary me-3 add_to_slack_btn d-none d-lg-block"><svg class="slack-icon" width="20" height="20" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.20686 12.6429C4.20686 13.8054 3.26997 14.7448 2.11075 14.7448C0.951545 14.7448 0.0146484 13.8054 0.0146484 12.6429C0.0146484 11.4805 0.951545 10.541 2.11075 10.541H4.20686V12.6429Z" style="fill: #E01E5A"/>
+                  <path d="M5.25293 12.6429C5.25293 11.4805 6.18983 10.541 7.34904 10.541C8.50825 10.541 9.44514 11.4805 9.44514 12.6429V17.8977C9.44514 19.0601 8.50825 19.9996 7.34904 19.9996C6.18983 19.9996 5.25293 19.0601 5.25293 17.8977V12.6429Z" style="fill: #E01E5A"/>
+                  <path d="M7.35001 4.20382C6.1908 4.20382 5.25391 3.26433 5.25391 2.10191C5.25391 0.939492 6.1908 0 7.35001 0C8.50922 0 9.44612 0.939492 9.44612 2.10191V4.20382H7.35001Z" style="fill: #36C5F0"/>
+                  <path d="M7.35226 5.27148C8.51147 5.27148 9.44836 6.21098 9.44836 7.3734C9.44836 8.53582 8.51147 9.47531 7.35226 9.47531H2.09611C0.936897 9.47531 0 8.53582 0 7.3734C0 6.21098 0.936897 5.27148 2.09611 5.27148H7.35226Z" style="fill: #36C5F0"/>
+                  <path d="M15.7461 7.3734C15.7461 6.21098 16.683 5.27148 17.8422 5.27148C19.0014 5.27148 19.9383 6.21098 19.9383 7.3734C19.9383 8.53582 19.0014 9.47531 17.8422 9.47531H15.7461V7.3734Z" style="fill: #2EB67D"/>
+                  <path d="M14.7 7.37261C14.7 8.53503 13.7631 9.47452 12.6039 9.47452C11.4447 9.47452 10.5078 8.53503 10.5078 7.37261V2.10191C10.5078 0.939491 11.4447 0 12.6039 0C13.7631 0 14.7 0.939491 14.7 2.10191V7.37261Z" style="fill: #2EB67D"/>
+                  <path d="M12.6039 15.7949C13.7631 15.7949 14.7 16.7344 14.7 17.8968C14.7 19.0593 13.7631 19.9987 12.6039 19.9987C11.4447 19.9987 10.5078 19.0593 10.5078 17.8968V15.7949H12.6039Z" style="fill: #ECB22E"/>
+                  <path d="M12.6039 14.7448C11.4447 14.7448 10.5078 13.8054 10.5078 12.6429C10.5078 11.4805 11.4447 10.541 12.6039 10.541H17.8601C19.0193 10.541 19.9562 11.4805 19.9562 12.6429C19.9562 13.8054 19.0193 14.7448 17.8601 14.7448H12.6039Z" style="fill: #ECB22E"/>
+                  </svg> Add to Slack</a>
+              </div>
+              <div class="col-12 col-lg-7">
+                <!-- Slider main container -->
+                <div class="swiper headerSlider">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="assets/img/header-carousel/slide-1.png" /></div>
+                    <div class="swiper-slide"><img src="assets/img/header-carousel/slide-2.png" /></div>
+                    <div class="swiper-slide"><img src="assets/img/header-carousel/slide-3.png" /></div>
+                  </div>
+                </div>
+                <div class="offset-md-2 headerSliderHeadings mt-3 mt-xxxl-5">
+                  <h4 class="fw-bolder mb-0">Botza</h4>
+                  <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <h3 class="fw-normal"><span class="text-gradient fw-bolder">assigns Tasks</span> during conversations</h3>
+                      </div>
+                      <div class="swiper-slide">
+                        <h3 class="fw-normal">keeps track of <span class="text-gradient fw-bolder">Bugs and Issues</span></h3>
+                      </div>
+                      <div class="swiper-slide">
+                        <h3 class="fw-normal">alerts you of <span class="text-gradient fw-bolder">website downtime</span></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 d-flex d-lg-none align-items-center justify-content-center">
+                <a href="#" class="btn btn-primary me-3 add_to_slack_btn"><svg class="slack-icon" width="20" height="20" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.20686 12.6429C4.20686 13.8054 3.26997 14.7448 2.11075 14.7448C0.951545 14.7448 0.0146484 13.8054 0.0146484 12.6429C0.0146484 11.4805 0.951545 10.541 2.11075 10.541H4.20686V12.6429Z" style="fill: #E01E5A"/>
+                  <path d="M5.25293 12.6429C5.25293 11.4805 6.18983 10.541 7.34904 10.541C8.50825 10.541 9.44514 11.4805 9.44514 12.6429V17.8977C9.44514 19.0601 8.50825 19.9996 7.34904 19.9996C6.18983 19.9996 5.25293 19.0601 5.25293 17.8977V12.6429Z" style="fill: #E01E5A"/>
+                  <path d="M7.35001 4.20382C6.1908 4.20382 5.25391 3.26433 5.25391 2.10191C5.25391 0.939492 6.1908 0 7.35001 0C8.50922 0 9.44612 0.939492 9.44612 2.10191V4.20382H7.35001Z" style="fill: #36C5F0"/>
+                  <path d="M7.35226 5.27148C8.51147 5.27148 9.44836 6.21098 9.44836 7.3734C9.44836 8.53582 8.51147 9.47531 7.35226 9.47531H2.09611C0.936897 9.47531 0 8.53582 0 7.3734C0 6.21098 0.936897 5.27148 2.09611 5.27148H7.35226Z" style="fill: #36C5F0"/>
+                  <path d="M15.7461 7.3734C15.7461 6.21098 16.683 5.27148 17.8422 5.27148C19.0014 5.27148 19.9383 6.21098 19.9383 7.3734C19.9383 8.53582 19.0014 9.47531 17.8422 9.47531H15.7461V7.3734Z" style="fill: #2EB67D"/>
+                  <path d="M14.7 7.37261C14.7 8.53503 13.7631 9.47452 12.6039 9.47452C11.4447 9.47452 10.5078 8.53503 10.5078 7.37261V2.10191C10.5078 0.939491 11.4447 0 12.6039 0C13.7631 0 14.7 0.939491 14.7 2.10191V7.37261Z" style="fill: #2EB67D"/>
+                  <path d="M12.6039 15.7949C13.7631 15.7949 14.7 16.7344 14.7 17.8968C14.7 19.0593 13.7631 19.9987 12.6039 19.9987C11.4447 19.9987 10.5078 19.0593 10.5078 17.8968V15.7949H12.6039Z" style="fill: #ECB22E"/>
+                  <path d="M12.6039 14.7448C11.4447 14.7448 10.5078 13.8054 10.5078 12.6429C10.5078 11.4805 11.4447 10.541 12.6039 10.541H17.8601C19.0193 10.541 19.9562 11.4805 19.9562 12.6429C19.9562 13.8054 19.0193 14.7448 17.8601 14.7448H12.6039Z" style="fill: #ECB22E"/>
+                  </svg> Add to Slack</a>
+              </div>
+            </div>
+            <!-- <a class="btn btn-outline-primary me-3">Outline Primary</a>
+            <a class="btn btn-secondary me-3" >Secondary btn</a> -->
+          </div>
+          <!-- <div class="swiper-pagination headerSlider-pagination"></div> -->
+        </section>
+      </header>
+      <section class="section section-2">
+        <div class="container">
+          <div class="row align-items-center justify-content-center section-heading text-center">
+            <div class="col-12 col-lg-10 col-xl-12">
+              <h2 class="color-dark mb-4"><span class="text-gradient">Botza</span> is simple. You just need to ask</h2>
+              <h5 class="fw-normal mb-lg-3">"If a tool is supposed to make my life easier. I shouldn’t have to do PhD on it."</h5>
+              <p style="color: #979EA8">- Palash, CTO @DEVZA Inc</p>
+            </div>
+          </div>
+          <div class="row align-items-center justify-content-center">
+            <div class="col-10 col-lg-6 col-xl-12">
+              <div class="slack-demo">
+                  <!-- <img class="slack-skate" src="/assets/img/Skate.png" /> -->
+                  <img class="slack-client" src="/assets/img/section-2/Slack Client.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-3">
+        <div class="container">
+          <div class="row align-items-center justify-content-center section-heading text-center">
+            <div class="col-12 col-lg-10 col-xl-12">
+              <h2 class="color-dark mb-4">A Panel which accompanies this wizard</h2>
+              <h5 class="fw-normal mb-lg-3">Now you don’t have to switch between multiple softwares, we bring all types of tools at one place.</h5>
+            </div>
+          </div>
+          <div class="row align-items-center justify-content-center row-macbook">
+            <div class="col-12 col-lg-7 col-macbook">
+              <img class="macbook" src="/assets/img/section-3/macbook-dancing.png" />
+              <div class="swiper-pagination macbookSlider-pagination"></div>
+            </div>
+            <div class="col-12 col-lg-5 d-flex justify-content-between flex-column py-5">
+              <div class="content">
+                <div class="swiper macbookSlider">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      <h3 class="color-dark mb-4">Quick-witted <span class="text-gradient">Dashboard</span></h3>
+                      <p class="h4 fw-normal">Dig deep into smart interactive dashboard to make quick data-driven decisions, ultimately driving high performance.</p>
+                    </div>
+                    <div class="swiper-slide">
+                      <h3 class="color-dark mb-4">Quick-witted <span class="text-gradient">Heading 2</span></h3>
+                      <p class="h4 fw-normal">Dig deep into smart interactive dashboard to make quick data-driven decisions, ultimately driving high performance.</p>
+                    </div>
+                    <div class="swiper-slide">
+                      <h3 class="color-dark mb-4">Quick-witted <span class="text-gradient">Heading 3</span></h3>
+                      <p class="h4 fw-normal">Dig deep into smart interactive dashboard to make quick data-driven decisions, ultimately driving high performance.</p>
+                    </div>
+                    <div class="swiper-slide">
+                      <h3 class="color-dark mb-4">Quick-witted <span class="text-gradient">Heading 4</span></h3>
+                      <p class="h4 fw-normal">Dig deep into smart interactive dashboard to make quick data-driven decisions, ultimately driving high performance.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="btn btn-outline-primary mx-auto" href="#" role="button">Get started for free</a>
+            </div>
+        </div>
+      </section>
+      <section class="section section-4">
+        <div class="container">
+          <div class="row text-center align-items-center justify-content-center section-heading">
+            <div class="col-lg-8">
+              <h2 class="color-dark mb-4"><span class="text-gradient">Botza</span> is for everyone</h2>
+              <h6 class="fw-bolder mb-3 color-gray">Botza’s advanced digital tools, when added to Slack, elevates the way you manage your projects and workflow. All within the platforms.</h6>
+            </div>
+          </div>
+          <div class="row align-items-start justify-content-center">
+            <div class="col-12 col-xl-3">
+                <div class="nav flex-row flex-xl-column justify-content-center justify-content-xl-start nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active" id="v-pills-crypto-tab" data-bs-toggle="pill" data-bs-target="#v-pills-crypto" type="a" role="tab" aria-controls="v-pills-crypto" aria-selected="true">Crypto</button>
+                  <button class="nav-link" id="v-pills-hr-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hr" type="a" role="tab" aria-controls="v-pills-hr" aria-selected="false">HR</button>
+                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-developers" type="a" role="tab" aria-controls="v-pills-messages" aria-selected="false">Developers</button>
+                  <button class="nav-link" id="v-pills-seo-tools-tab" data-bs-toggle="pill" data-bs-target="#v-pills-seo-tools" type="a" role="tab" aria-controls="v-pills-seo-tools" aria-selected="false">SEO Tools</button>
+                  <button class="nav-link" id="v-pills-webmaster-tab" data-bs-toggle="pill" data-bs-target="#v-pills-webmaster" type="a" role="tab" aria-controls="v-pills-webmaster" aria-selected="false">Webmaster</button>
+                  <div class="nav-link nav-pill-active-bg"></div>
+                </div>
+            </div>
+            <!-- Gif Sliders -->
+            <div class="col-12 col-xl-9 gifSliders">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-crypto" role="tabpanel" aria-labelledby="v-pills-crypto-tab">
+                  <!-- Crypto Slider -->
+                  <div class="row">
+                    <div class="col-12 col-md-8">
+                      <!-- Slider main container -->
+                      <div class="swiper cryptoSlider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide" data-title="Git Pull"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="OTP Grab"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="My Tasks"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="IP Resolve"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="BTC Purchase"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Employee Uptime"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="New Bug"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Reminder"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
+                      <div class="cryptoSlider-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-hr" role="tabpanel" aria-labelledby="v-pills-hr-tab">
+                  <!-- HR Slider -->
+                  <div class="row">
+                    <div class="col-12 col-md-8">
+                      <!-- Slider main container -->
+                      <div class="swiper hrSlider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide" data-title="Git Pull"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="OTP Grab"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="My Tasks"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="IP Resolve"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="BTC Purchase"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Employee Uptime"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="New Bug"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Reminder"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
+                      <div class="hrSlider-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-developers" role="tabpanel" aria-labelledby="v-pills-developers-tab">
+                  <!-- Developers Slider -->
+                  <div class="row">
+                    <div class="col-12 col-md-8">
+                      <!-- Slider main container -->
+                      <div class="swiper developersSlider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide" data-title="Git Pull"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="OTP Grab"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="My Tasks"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="IP Resolve"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="BTC Purchase"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Employee Uptime"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="New Bug"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Reminder"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
+                      <div class="developersSlider-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-seo-tools" role="tabpanel" aria-labelledby="v-pills-seo-tools-tab">
+                  <!-- SEO Tools Slider -->
+                  <div class="row">
+                    <div class="col-12 col-md-8">
+                      <!-- Slider main container -->
+                      <div class="swiper seoToolsSlider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide" data-title="Git Pull"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="OTP Grab"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="My Tasks"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="IP Resolve"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="BTC Purchase"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Employee Uptime"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="New Bug"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Reminder"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
+                      <div class="seoToolsSlider-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-webmaster" role="tabpanel" aria-labelledby="v-pills-webmaster-tab">
+                  <!-- Webmaster Slider -->
+                  <div class="row">
+                    <div class="col-12 col-md-8">
+                      <!-- Slider main container -->
+                      <div class="swiper webmasterSlider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                          <!-- Slides -->
+                          <div class="swiper-slide" data-title="Git Pull"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="OTP Grab"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="My Tasks"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="IP Resolve"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="BTC Purchase"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Employee Uptime"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="New Bug"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                          <div class="swiper-slide" data-title="Reminder"><img src="assets/img/section-4-sliders/crypto/ip-resolve.jpg" /></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
+                      <div class="webmasterSlider-pagination"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section-5">
+        <svg id="arrow-path">
+            <path class="path" id="path1" style="filter:url(#dropshadow)" stroke-linecap="round" />
+            <path class="path" id="path2" style="filter:url(#dropshadow)" stroke-linecap="round" />
+            <path class="path" id="path3" style="filter:url(#dropshadow)" stroke-linecap="round" />
+            <filter id="dropshadow" height="200%" y="-40%" x="-40%" width="200%" filterUnits="userSpaceOnUse">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="12.5"/> <!-- stdDeviation is how much to blur -->
+              <feOffset dx="0" dy="0" result="offsetblur"/> <!-- how much to offset -->
+              <feComponentTransfer>
+                <feFuncA type="linear" slope="0.1"/> <!-- slope is the opacity of the shadow -->
+              </feComponentTransfer>
+              <feMerge>
+                <feMergeNode/> <!-- this contains the offset blurred image -->
+                <feMergeNode in="SourceGraphic"/> <!-- this contains the element that the filter is applied to -->
+              </feMerge>
+            </filter>
+
+            <path id="arrow" d="M13 13L86.5998 87.0905C87.3746 87.8705 87.3746 89.1295 86.5998 89.9095L13 164" fill="none" stroke="black" stroke-width="25" stroke-linecap="round" style="filter:url(#dropshadow)"/>
+          </svg>
+        <div class="container">
+          <div class="row text-center align-middle justify-content-center section-heading">
+            <div class="col-12">
+              <h2 class="color-dark">We are taking the baton forward!</h2>
+              <h1 class="text-outlined">We are taking the baton forward!</h1>
+            </div>
+          </div>
+
+          <div class="row justify-content-center timeline">
+            <div class="col-md-6 col-xl-3 cli order-1 d-flex flex-row flex-md-column align-content-start align-content-md-center">
+              <div class="icon align-self-start align-self-md-center">
+                <img src="assets/img/section-5/cli.svg" />
+              </div>
+              <div class="content d-flex flex-column text-end text-md-center align-items-center">
+                <div class="timeline-heading">
+                  <h4 class="fw-bolder">CLI</h4>
+                  <span class="date fw-bolder">1960</span>
+                </div>
+                <p>Program which processes commands to a computer in the form of lines of text. A human communicated with a computer.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3 gui order-2 d-flex flex-row flex-md-column align-content-start align-content-md-center">
+              <div class="icon align-self-start align-self-md-center">
+                <img src="assets/img/section-5/gui.svg" />
+              </div>
+              <div class="content d-flex flex-column text-end text-md-center align-items-center">
+                <div class="timeline-heading">
+                  <h4 class="fw-bolder">GUI</h4>
+                  <span class="date fw-bolder">1979</span>
+                </div>
+                <p>Allow the user to access all human knowledge using connections very similar to how hyperlinks work.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3 alexa order-3 order-md-4 order-xl-3 d-flex flex-row flex-md-column align-content-start align-content-md-center">
+              <div class="icon align-self-start align-self-md-center">
+                <img src="assets/img/section-5/alexa.svg" />
+              </div>
+              <div class="content d-flex flex-column text-end text-md-center align-items-center">
+                <div class="timeline-heading">
+                  <h4 class="fw-bolder">ALEXA / SIRI</h4>
+                  <span class="date fw-bolder">2011</span>
+                </div>
+                <p>First voice assistants certainly changed how we all interact with technology, but still lacks in complex problem solving.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-3 botza order-4 order-md-3 order-xl-4 d-flex flex-row flex-md-column align-content-start align-content-md-center">
+              <div class="icon align-self-start align-self-md-center">
+                <img src="assets/img/section-5/botza.svg" />
+              </div>
+              <div class="content d-flex flex-column text-end text-md-center align-items-center">
+                <div class="timeline-heading">
+                  <h4 class="fw-bolder">BOTZA</h4>
+                  <span class="date fw-bolder">2021</span>
+                </div>
+                <p>Ultimate magic wand. All your complex to easy work done with just one click. Relax! it’s not a dream.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid cta text-center">
+          <div class="row">
+            <div class="col-12 d-flex  justify-content-center align-items-center flex-column">
+              <h2 class="mb-3">More magic on the way!</h2>
+              <p class="mb-5">Try Botza for free | Limited invites only</p>
+              <div class="cta-buttons row">
+                <div class="col py-2">
+                  <a class="btn btn-white" href="" role="button"><span class="text-gradient">Get started</span></a>
+                </div>
+                <div class="col py-2">
+                  <a class="btn btn-white" href="" role="button">
+                    <svg class="slack-icon" width="20" height="20" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.20686 12.6429C4.20686 13.8054 3.26997 14.7448 2.11075 14.7448C0.951545 14.7448 0.0146484 13.8054 0.0146484 12.6429C0.0146484 11.4805 0.951545 10.541 2.11075 10.541H4.20686V12.6429Z" fill="#E01E5A"/>
+                      <path d="M5.25293 12.6429C5.25293 11.4805 6.18983 10.541 7.34904 10.541C8.50825 10.541 9.44514 11.4805 9.44514 12.6429V17.8977C9.44514 19.0601 8.50825 19.9996 7.34904 19.9996C6.18983 19.9996 5.25293 19.0601 5.25293 17.8977V12.6429Z" fill="#E01E5A"/>
+                      <path d="M7.35001 4.20382C6.1908 4.20382 5.25391 3.26433 5.25391 2.10191C5.25391 0.939492 6.1908 0 7.35001 0C8.50922 0 9.44612 0.939492 9.44612 2.10191V4.20382H7.35001Z" fill="#36C5F0"/>
+                      <path d="M7.35226 5.27148C8.51147 5.27148 9.44836 6.21098 9.44836 7.3734C9.44836 8.53582 8.51147 9.47531 7.35226 9.47531H2.09611C0.936897 9.47531 0 8.53582 0 7.3734C0 6.21098 0.936897 5.27148 2.09611 5.27148H7.35226Z" fill="#36C5F0"/>
+                      <path d="M15.7461 7.3734C15.7461 6.21098 16.683 5.27148 17.8422 5.27148C19.0014 5.27148 19.9383 6.21098 19.9383 7.3734C19.9383 8.53582 19.0014 9.47531 17.8422 9.47531H15.7461V7.3734Z" fill="#2EB67D"/>
+                      <path d="M14.7 7.37261C14.7 8.53503 13.7631 9.47452 12.6039 9.47452C11.4447 9.47452 10.5078 8.53503 10.5078 7.37261V2.10191C10.5078 0.939491 11.4447 0 12.6039 0C13.7631 0 14.7 0.939491 14.7 2.10191V7.37261Z" fill="#2EB67D"/>
+                      <path d="M12.6039 15.7949C13.7631 15.7949 14.7 16.7344 14.7 17.8968C14.7 19.0593 13.7631 19.9987 12.6039 19.9987C11.4447 19.9987 10.5078 19.0593 10.5078 17.8968V15.7949H12.6039Z" fill="#ECB22E"/>
+                      <path d="M12.6039 14.7448C11.4447 14.7448 10.5078 13.8054 10.5078 12.6429C10.5078 11.4805 11.4447 10.541 12.6039 10.541H17.8601C19.0193 10.541 19.9562 11.4805 19.9562 12.6429C19.9562 13.8054 19.0193 14.7448 17.8601 14.7448H12.6039Z" fill="#ECB22E"/>
+                    </svg>
+                    <span class="text-gradient">Add to Slack</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-6 col-lg-3 order-4 order-lg-1">
+              <img src="assets/img/Botza Logo.svg" title="Botza" />
+              <p class="copyrights text-gray mt-4">All Rights Reserved &copy; Botza.io</p>
+              <ul class="social-icons mt-4">
+                <li>
+                  <a href="#" title="youtube">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17.6055 16.168L23.8449 19.9996L17.6055 23.8338V16.168Z" fill="url(#paint0_linear_156:1762)"/>
+                      <path d="M20 0C16.0444 0 12.1776 1.17298 8.8886 3.37061C5.59962 5.56824 3.03617 8.69181 1.52242 12.3463C0.00866564 16.0009 -0.387401 20.0222 0.384303 23.9018C1.15601 27.7814 3.06082 31.3451 5.85787 34.1421C8.65492 36.9392 12.2186 38.844 16.0982 39.6157C19.9778 40.3874 23.9992 39.9913 27.6537 38.4776C31.3082 36.9638 34.4318 34.4004 36.6294 31.1114C38.827 27.8224 40 23.9556 40 20C40 14.6957 37.8929 9.60859 34.1421 5.85786C30.3914 2.10714 25.3043 0 20 0V0ZM29.5316 24.8132C29.1316 26.0421 27.8079 26.7895 26.5895 26.9605C22.2088 27.4263 17.7912 27.4263 13.4105 26.9605C12.1921 26.7895 10.8684 26.0421 10.4684 24.8132C9.84477 21.6356 9.84477 18.3671 10.4684 15.1895C10.8684 13.9474 12.1921 13.2132 13.4211 13.0421C17.8017 12.5763 22.2194 12.5763 26.6 13.0421C27.8184 13.2132 29.1421 13.9579 29.5421 15.1895C30.1623 18.3677 30.1587 21.6363 29.5316 24.8132Z" fill="url(#paint1_linear_156:1762)"/>
+                      <defs>
+                        <linearGradient id="paint0_linear_156:1762" x1="20.7252" y1="16.168" x2="20.7252" y2="23.8338" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.0938146" stop-color="#725AFF"/>
+                        <stop offset="1" stop-color="#418DE8"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_156:1762" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.0938146" stop-color="#725AFF"/>
+                        <stop offset="1" stop-color="#418DE8"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="twitter">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 0C16.0444 0 12.1776 1.17298 8.8886 3.37061C5.59962 5.56824 3.03617 8.69181 1.52242 12.3463C0.00866564 16.0009 -0.387401 20.0222 0.384303 23.9018C1.15601 27.7814 3.06082 31.3451 5.85787 34.1421C8.65492 36.9392 12.2186 38.844 16.0982 39.6157C19.9778 40.3874 23.9992 39.9913 27.6537 38.4776C31.3082 36.9638 34.4318 34.4004 36.6294 31.1114C38.827 27.8224 40 23.9556 40 20C40 14.6957 37.8929 9.60859 34.1421 5.85786C30.3914 2.10714 25.3043 0 20 0V0ZM29.9605 13.9474C29.4878 14.6575 28.9102 15.2919 28.2474 15.8289C28.1638 15.8986 28.0968 15.986 28.0513 16.0848C28.0058 16.1835 27.9829 16.2912 27.9842 16.4V16.4658C27.9765 17.892 27.7145 19.3053 27.2105 20.6395C26.6912 22.0398 25.9197 23.3331 24.9342 24.4553C23.6099 25.9629 21.9062 27.0887 20 27.7158C18.7475 28.1223 17.4379 28.3258 16.1211 28.3184C14.0319 28.3182 11.9801 27.7652 10.1737 26.7158C10.109 26.679 10.058 26.6221 10.0286 26.5537C9.99911 26.4853 9.99279 26.4092 10.0105 26.3368C10.0288 26.2657 10.0703 26.2027 10.1284 26.1578C10.1866 26.113 10.2581 26.0889 10.3316 26.0895H10.8316C12.419 26.0923 13.9712 25.6213 15.2895 24.7368C14.5042 24.6086 13.7694 24.2664 13.1659 23.7479C12.5624 23.2293 12.1134 22.5544 11.8684 21.7974C11.8559 21.7595 11.8536 21.7189 11.8618 21.6798C11.8701 21.6408 11.8885 21.6046 11.9152 21.5749C11.9419 21.5452 11.976 21.5232 12.014 21.5109C12.052 21.4987 12.0926 21.4967 12.1316 21.5053C12.3711 21.5503 12.6142 21.5732 12.8579 21.5737H12.95C12.1908 21.2253 11.5489 20.6642 11.1019 19.9585C10.6549 19.2528 10.4221 18.4327 10.4316 17.5974C10.4319 17.5583 10.4422 17.5199 10.4617 17.4861C10.4812 17.4522 10.5092 17.4239 10.5428 17.4041C10.5765 17.3842 10.6147 17.3734 10.6538 17.3727C10.6928 17.3719 10.7314 17.3814 10.7658 17.4C11.0745 17.5724 11.4058 17.7008 11.75 17.7816C11.0702 17.1086 10.633 16.2291 10.5068 15.2809C10.3806 14.3327 10.5726 13.3695 11.0526 12.5421C11.0711 12.5105 11.0969 12.4838 11.1279 12.4644C11.1589 12.4449 11.1941 12.4333 11.2306 12.4304C11.2671 12.4276 11.3037 12.4336 11.3373 12.448C11.371 12.4624 11.4006 12.4848 11.4237 12.5132C12.3751 13.6887 13.5525 14.6617 14.8864 15.3745C16.2202 16.0873 17.6834 16.5255 19.1895 16.6632H19.2105C19.2327 16.6625 19.2544 16.6574 19.2745 16.6481C19.2946 16.6387 19.3126 16.6254 19.3274 16.6089C19.3421 16.5924 19.3534 16.5731 19.3604 16.5521C19.3675 16.5311 19.3702 16.5089 19.3684 16.4868C19.3098 15.9587 19.3437 15.4244 19.4684 14.9079C19.6382 14.2058 19.9868 13.5596 20.4802 13.0321C20.9736 12.5046 21.5951 12.1137 22.2842 11.8974C22.7264 11.7592 23.1868 11.6883 23.65 11.6868C24.7003 11.6856 25.7149 12.0684 26.5026 12.7632C26.6047 12.8545 26.7368 12.905 26.8737 12.9053C26.9181 12.9043 26.9623 12.8981 27.0053 12.8868C27.745 12.6996 28.4539 12.4071 29.1105 12.0184C29.1498 11.9942 29.1956 11.9827 29.2416 11.9855C29.2876 11.9883 29.3317 12.0053 29.3677 12.0341C29.4037 12.0629 29.4299 12.1022 29.4428 12.1465C29.4556 12.1908 29.4545 12.238 29.4395 12.2816C29.2205 12.9705 28.8302 13.5925 28.3053 14.0895C28.7785 13.9779 29.2402 13.822 29.6842 13.6237C29.7278 13.6073 29.7753 13.6048 29.8203 13.6164C29.8653 13.628 29.9057 13.6532 29.9359 13.6886C29.9661 13.724 29.9847 13.7678 29.9891 13.8141C29.9935 13.8604 29.9835 13.9069 29.9605 13.9474Z" fill="url(#paint0_linear_156:1767)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_156:1767" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="Instagram">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.9965 23.1609C21.742 23.1609 23.157 21.7459 23.157 20.0004C23.157 18.2549 21.742 16.8398 19.9965 16.8398C18.251 16.8398 16.8359 18.2549 16.8359 20.0004C16.8359 21.7459 18.251 23.1609 19.9965 23.1609Z" fill="url(#paint0_linear_156:1771)"/>
+                      <path d="M24.0433 12.0117H15.9591C14.9122 12.0117 13.9082 12.4276 13.1679 13.1679C12.4276 13.9082 12.0117 14.9122 12.0117 15.9591V24.0407C12.0117 25.0876 12.4276 26.0916 13.1679 26.8319C13.9082 27.5722 14.9122 27.9881 15.9591 27.9881H24.0433C25.0902 27.9881 26.0943 27.5722 26.8345 26.8319C27.5748 26.0916 27.9907 25.0876 27.9907 24.0407V15.9565C27.99 14.91 27.5738 13.9067 26.8336 13.1669C26.0934 12.4272 25.0898 12.0117 24.0433 12.0117ZM20.0012 25.1723C18.9778 25.1728 17.9773 24.8698 17.1261 24.3016C16.275 23.7334 15.6114 22.9256 15.2195 21.9803C14.8275 21.035 14.7246 19.9946 14.924 18.9908C15.1233 17.9871 15.6158 17.065 16.3393 16.3411C17.0627 15.6173 17.9846 15.1243 18.9883 14.9245C19.9919 14.7246 21.0323 14.8269 21.9778 15.2185C22.9234 15.61 23.7315 16.2731 24.3002 17.1239C24.8688 17.9748 25.1723 18.9752 25.1723 19.9986C25.1709 21.3698 24.6257 22.6846 23.6563 23.6545C22.6869 24.6243 21.3725 25.1702 20.0012 25.1723ZM25.2038 16.1038C24.9507 16.1043 24.703 16.0297 24.4923 15.8894C24.2816 15.7491 24.1172 15.5493 24.0201 15.3155C23.923 15.0817 23.8974 14.8244 23.9467 14.576C23.996 14.3277 24.1178 14.0996 24.2969 13.9205C24.4759 13.7415 24.704 13.6196 24.9523 13.5704C25.2007 13.5211 25.4581 13.5467 25.6919 13.6438C25.9257 13.7409 26.1254 13.9053 26.2657 14.116C26.406 14.3267 26.4807 14.5743 26.4802 14.8275C26.4795 15.1658 26.3448 15.49 26.1056 15.7292C25.8664 15.9684 25.5421 16.1031 25.2038 16.1038Z" fill="url(#paint1_linear_156:1771)"/>
+                      <path d="M20 0C16.0444 0 12.1776 1.17298 8.8886 3.37061C5.59962 5.56824 3.03617 8.69181 1.52242 12.3463C0.00866564 16.0009 -0.387401 20.0222 0.384303 23.9018C1.15601 27.7814 3.06082 31.3451 5.85787 34.1421C8.65492 36.9392 12.2186 38.844 16.0982 39.6157C19.9778 40.3874 23.9992 39.9913 27.6537 38.4776C31.3082 36.9638 34.4318 34.4004 36.6294 31.1114C38.827 27.8224 40 23.9556 40 20C40 14.6957 37.8929 9.60859 34.1421 5.85786C30.3914 2.10714 25.3043 0 20 0V0ZM30 24.0421C29.9986 25.6218 29.3705 27.1364 28.2534 28.2534C27.1364 29.3705 25.6218 29.9986 24.0421 30H15.9579C14.3784 29.9979 12.8642 29.3695 11.7473 28.2527C10.6305 27.1358 10.0021 25.6216 10 24.0421V15.9579C10.0021 14.3784 10.6305 12.8642 11.7473 11.7473C12.8642 10.6305 14.3784 10.0021 15.9579 10H24.0421C25.6216 10.0021 27.1358 10.6305 28.2527 11.7473C29.3695 12.8642 29.9979 14.3784 30 15.9579V24.0421Z" fill="url(#paint2_linear_156:1771)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_156:1771" x1="19.9965" y1="16.8398" x2="19.9965" y2="23.1609" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      <linearGradient id="paint1_linear_156:1771" x1="20.0012" y1="12.0117" x2="20.0012" y2="27.9881" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      <linearGradient id="paint2_linear_156:1771" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="Facebook">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 0C16.0444 0 12.1776 1.17298 8.8886 3.37061C5.59962 5.56824 3.03617 8.69181 1.52242 12.3463C0.00866564 16.0009 -0.387401 20.0222 0.384303 23.9018C1.15601 27.7814 3.06082 31.3451 5.85787 34.1421C8.65492 36.9392 12.2186 38.844 16.0982 39.6157C19.9778 40.3874 23.9992 39.9913 27.6537 38.4776C31.3082 36.9638 34.4318 34.4004 36.6294 31.1114C38.827 27.8224 40 23.9556 40 20C40 14.6957 37.8929 9.60859 34.1421 5.85786C30.3914 2.10714 25.3043 0 20 0V0ZM25.0684 18.1053L24.7369 20.8921C24.7225 21.0214 24.6608 21.1409 24.5636 21.2274C24.4664 21.3139 24.3406 21.3613 24.2105 21.3605H21.3158V29.6237C21.3165 29.7223 21.2782 29.8173 21.2091 29.8878C21.1401 29.9583 21.046 29.9986 20.9474 30H18C17.9509 29.9993 17.9025 29.989 17.8574 29.9696C17.8123 29.9501 17.7715 29.922 17.7373 29.8868C17.7031 29.8517 17.6761 29.8101 17.658 29.7645C17.6399 29.7189 17.6309 29.6701 17.6316 29.6211L17.6474 21.3605H15.4553C15.3157 21.3605 15.1818 21.3051 15.0831 21.2064C14.9844 21.1077 14.929 20.9738 14.929 20.8342V18.05C14.929 17.9104 14.9844 17.7765 15.0831 17.6778C15.1818 17.5791 15.3157 17.5237 15.4553 17.5237H17.6316V14.8237C17.6316 11.7 19.4921 10 22.2105 10H24.4395C24.5791 10 24.7129 10.0555 24.8116 10.1542C24.9103 10.2529 24.9658 10.3867 24.9658 10.5263V12.8711C24.9658 13.0106 24.9103 13.1445 24.8116 13.2432C24.7129 13.3419 24.5791 13.3974 24.4395 13.3974H23.0737C21.5947 13.4211 21.3158 14.1289 21.3158 15.1868V17.5158H24.5579C24.6313 17.5175 24.7036 17.5345 24.7701 17.5658C24.8365 17.597 24.8957 17.6419 24.9438 17.6974C24.9919 17.7529 25.0278 17.8179 25.0493 17.8881C25.0707 17.9584 25.0773 18.0323 25.0684 18.1053Z" fill="url(#paint0_linear_156:1777)"/>
+                      <defs>
+                      <linearGradient id="paint0_linear_156:1777" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+                      <stop offset="0.0938146" stop-color="#725AFF"/>
+                      <stop offset="1" stop-color="#418DE8"/>
+                      </linearGradient>
+                      </defs>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-3 d-lg-flex flex-column order-1 order-lg-2 mb-5 mb-lg-0">
+              <div class="footer-nav align-self-end">
+                <span class="fw-bold color-dark">PRODUCT</span>
+                <ul>
+                  <li>
+                    <a href="#" class="underline">Features</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">Pricing</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">Integrations</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">Terms & Privacy</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3 d-lg-flex flex-column order-2 order-lg-3 mb-5 mb-lg-0">
+              <div class="footer-nav align-self-end">
+                <span class="fw-bold color-dark">RESOURCES</span>
+                <ul>
+                  <li>
+                    <a href="#" class="underline">Help</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">FAQs</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">Blog</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">Knowledgebase</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3 d-lg-flex flex-column order-3 order-lg-4">
+              <div class="footer-nav align-self-end">
+                <span class="fw-bold color-dark">COMPANY</span>
+                <ul>
+                  <li>
+                    <a href="#" class="underline">About us</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">Contact us</a>
+                  </li>
+                  <li>
+                    <a href="#" class="underline">Chat on Slack</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        </footer>
+      </section>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="assets/js/fullpage.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/MotionPathPlugin.min.js"></script>
+    <script src="assets/js/drawsvgmin.min.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script type="module" src="assets/js/starter.js"></script>
+  </body>
+</html>
