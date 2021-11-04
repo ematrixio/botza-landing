@@ -231,7 +231,7 @@ window.onload = function() {
       document.getElementById("loader-wrapper").style.opacity = 0;
       document.getElementById("loader-wrapper").style.zIndex = -9999;
       // document.getElementById("loader-wrapper").remove();
-  }, 2000);
+  }, 500);
 };
 
 
