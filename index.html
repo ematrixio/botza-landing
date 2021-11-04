@@ -113,7 +113,7 @@
                   <path d="M12.6039 15.7949C13.7631 15.7949 14.7 16.7344 14.7 17.8968C14.7 19.0593 13.7631 19.9987 12.6039 19.9987C11.4447 19.9987 10.5078 19.0593 10.5078 17.8968V15.7949H12.6039Z" style="fill: #ECB22E"/>
                   <path d="M12.6039 14.7448C11.4447 14.7448 10.5078 13.8054 10.5078 12.6429C10.5078 11.4805 11.4447 10.541 12.6039 10.541H17.8601C19.0193 10.541 19.9562 11.4805 19.9562 12.6429C19.9562 13.8054 19.0193 14.7448 17.8601 14.7448H12.6039Z" style="fill: #ECB22E"/>
                   </svg> Add to Slack</a> -->
-                  <div class='inviteBox2'>
+                  <div class='inviteBox2 d-none d-lg-block'>
                     <input type='email' id='userEmail2' placeholder="Email"/>
                     <button id='inviteButton2'>Request Invite</button>
                     <p id='error2'></p>
@@ -149,7 +149,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 d-flex d-lg-none align-items-center justify-content-center">
+              <!-- <div class="col-12 d-flex d-lg-none align-items-center justify-content-center">
                 <a href="#" class="btn btn-primary me-3 add_to_slack_btn"><svg class="slack-icon" width="20" height="20" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4.20686 12.6429C4.20686 13.8054 3.26997 14.7448 2.11075 14.7448C0.951545 14.7448 0.0146484 13.8054 0.0146484 12.6429C0.0146484 11.4805 0.951545 10.541 2.11075 10.541H4.20686V12.6429Z" style="fill: #E01E5A"/>
                   <path d="M5.25293 12.6429C5.25293 11.4805 6.18983 10.541 7.34904 10.541C8.50825 10.541 9.44514 11.4805 9.44514 12.6429V17.8977C9.44514 19.0601 8.50825 19.9996 7.34904 19.9996C6.18983 19.9996 5.25293 19.0601 5.25293 17.8977V12.6429Z" style="fill: #E01E5A"/>
@@ -160,6 +160,11 @@
                   <path d="M12.6039 15.7949C13.7631 15.7949 14.7 16.7344 14.7 17.8968C14.7 19.0593 13.7631 19.9987 12.6039 19.9987C11.4447 19.9987 10.5078 19.0593 10.5078 17.8968V15.7949H12.6039Z" style="fill: #ECB22E"/>
                   <path d="M12.6039 14.7448C11.4447 14.7448 10.5078 13.8054 10.5078 12.6429C10.5078 11.4805 11.4447 10.541 12.6039 10.541H17.8601C19.0193 10.541 19.9562 11.4805 19.9562 12.6429C19.9562 13.8054 19.0193 14.7448 17.8601 14.7448H12.6039Z" style="fill: #ECB22E"/>
                   </svg> Add to Slack</a>
+              </div> -->
+              <div class='inviteBox2 d-block d-lg-none'>
+                <input type='email' id='userEmail2' placeholder="Email"/>
+                <button id='inviteButton2'>Request Invite</button>
+                <p id='error2'></p>
               </div>
             </div>
             <!-- <a class="btn btn-outline-primary me-3">Outline Primary</a>
