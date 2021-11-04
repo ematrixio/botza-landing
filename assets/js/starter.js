@@ -4,11 +4,12 @@ const Scroller = new fullpage('#fullpage', {
   autoScrolling:true,
   css3: true,
   // scrollHorizontally: true,
-  lockAnchors: false,
-  anchors:['section-1', 'section-2', 'section-3', 'section-4', 'section-5'],
+  lockAnchors: true,
+  lockAnchors: false, // to enable url navigation
+  // anchors:['section-1', 'section-2', 'section-3', 'section-4', 'section-5'],
   navigation: true,
   navigationPosition: 'right',
-  navigationTooltips: ['section 1', 'section 2', 'section 3', 'section 4', 'section 5'],
+  navigationTooltips: ['Home', 'Botza In Action', 'Panels', 'Power to Slack', 'Journey'],
   fitToSection: true,
   scrollOverflow: true,
 
