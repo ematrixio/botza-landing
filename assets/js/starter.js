@@ -16,9 +16,12 @@ const Scroller = new fullpage('#fullpage', {
   afterLoad: function(origin, destination, direction){
     var loadedSection = this;
 
-    if(destination.index == 4 && direction == 'down' && !hasPlayed) {
+    if(destination.index == 4 && direction == 'down') {
       // play timeline animation
-      runAnimation();
+      if (!hasPlayed)
+        runAnimation();
+      else
+        reSizeAnimation();
     }
   }
 });
