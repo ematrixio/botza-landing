@@ -1044,7 +1044,7 @@ header {
 
 // portrait max
 
-@media only screen and (max-width: 1112px) {
+@media only screen and (max-width: 1200px) {
   .section {
     &.section-3 {
       .macbookSlider {
@@ -1450,5 +1450,163 @@ header {
   svg#arrow-path {
     #arrow {
     }
+  }
+}
+
+// extra css classes
+#inviteButton {
+  border: none;
+  outline: none;
+  background: linear-gradient(180deg, #725aff 9.38%, #418de8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.25em;
+  position: absolute;
+  right: 1.5em;
+  top: 0.6em;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.inviteBox,
+.inviteBox2 {
+  position: relative;
+}
+
+.inviteBox2 {
+  display: flex;
+  align-items: baseline;
+  gap: 1.875em;
+}
+
+.inviteTextBox {
+  width: 33.0625em;
+  height: 3.75em;
+  border-radius: 1.25em;
+  background-color: white;
+  outline: none;
+  border: none;
+  padding: 1.25em;
+}
+
+.inviteTextBox::placeholder {
+  color: rgba(58, 58, 58, 0.3);
+  font-size: 1.125em;
+  font-weight: 600;
+  font-family: "Montserrat";
+}
+
+#userEmail2 {
+  width: 21.1875em;
+  height: 3em;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 0.125em solid rgba(58, 58, 58, 0.1);
+  padding: 0.625em 0em;
+}
+
+#inviteText2::placeholder {
+  font-size: 1.125em;
+  font-weight: 600;
+  color: rgba(58, 58, 58, 0.3);
+}
+
+#inviteButton2 {
+  border: none;
+  outline: none;
+  background: linear-gradient(267.68deg, #725aff 9.38%, #418de8 100%);
+  font-size: 1.25em;
+  right: 1.5em;
+  top: 0.6em;
+  white-space: nowrap;
+  color: white;
+  font-family: "Montserrat";
+  font-weight: 600;
+  border-radius: 1.25em;
+  padding: 0.89em 1.67em;
+}
+
+.poweredByText {
+  font-size: 0.8125em;
+  font-weight: 500;
+  margin: 0;
+}
+
+#poweredBy {
+  display: flex;
+  gap: 0.3125em;
+  align-items: center;
+  margin-left: 2.1875em;
+  margin-top: 0.625em;
+}
+
+.successModal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  top: 0;
+  z-index: 3;
+  background: rgba(58, 58, 58, 0.3);
+}
+
+.successModalBox {
+  width: fit-content;
+  margin: auto;
+  padding: 3em 5em;
+  position: relative;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0.125em 0.5em 1.5625em rgba(87, 100, 118, 0.2);
+  border-radius: 1.25em;
+}
+
+.successModalElement > img {
+  width: 25.25em;
+}
+
+.successModalText {
+  font-size: 2.25em;
+  font-weight: 600;
+  color: black;
+}
+
+.closeModal {
+  cursor: pointer;
+  position: absolute;
+  width: 2.5em;
+  top: 2em;
+  right: 2em;
+}
+
+#error2,
+#error1 {
+  color: #ff1e1e !important;
+  font-size: 1.125em !important;
+  font-weight: 600;
+  position: absolute;
+  bottom: -2em;
+  margin: 0;
+}
+
+.demoVideos {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 3px 38px rgba(122, 199, 255, 0.29);
+  border-radius: 20px;
+}
+
+
+@media (max-width: 575.98px) {
+  .inviteBox,
+  .inviteBox2,
+  .successModal {
+    font-size: 10px;
+  }
+
+  .paginationButton {
+    box-shadow: none;
   }
 }

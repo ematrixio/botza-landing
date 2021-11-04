@@ -1,32 +1,3 @@
-// Arrow Path Animation
-gsap.registerPlugin(MotionPathPlugin);
-gsap.registerPlugin(DrawSVGPlugin);
-let pathAnim = new TimelineMax({
-    // repeat: -1,
-    // repeatDelay: 1
-    // delay: 1
-});
-let cli  = document.querySelector(".timeline .cli");
-let gui = document.querySelector(".timeline .gui");
-let alexa  = document.querySelector(".timeline .alexa");
-let botza = document.querySelector(".timeline .botza");
-let path1  = document.querySelector("svg#arrow-path #path1");
-let path2  = document.querySelector("svg#arrow-path #path2");
-let path3  = document.querySelector("svg#arrow-path #path3");
-
-let cli_text  = document.querySelector(".timeline .cli p");
-let gui_text = document.querySelector(".timeline .gui p");
-let alexa_text  = document.querySelector(".timeline .alexa p");
-let botza_text = document.querySelector(".timeline .botza p");
-
-let cli_icon  = document.querySelector(".timeline .cli > .icon");
-let gui_icon = document.querySelector(".timeline .gui > .icon");
-let alexa_icon  = document.querySelector(".timeline .alexa > .icon");
-let botza_icon = document.querySelector(".timeline .botza > .icon");
-
-let tablet = false;
-let hasPlayed = false;
-
 // section slider interface
 const Scroller = new fullpage('#fullpage', {
   //options here
@@ -45,25 +16,12 @@ const Scroller = new fullpage('#fullpage', {
   afterLoad: function(origin, destination, direction){
     var loadedSection = this;
 
-    if(destination.index == 4 && direction == 'down') {
+    if(destination.index == 4 && direction == 'down' && !hasPlayed) {
       // play timeline animation
       runAnimation();
     }
   }
 });
-
-// navbar handler
-
-  // document.querySelector('.navbar').addEventListener('show.bs.collapse', function () {
-  //   let el_overlay = document.createElement('span');
-  //   el_overlay.className = 'overlay';
-  //   document.body.appendChild(el_overlay)
-  //   document.body.classList.add('body-overlay');
-  // });
-  // document.querySelector('.navbar').addEventListener('hide.bs.collapse', function () {
-  //   document.body.removeChild(document.querySelector('.overlay'));
-  //   document.body.classList.remove('body-overlay');
-  // });
 
 // header sliders
 
@@ -111,7 +69,7 @@ const macbookSlider = new Swiper('.macbookSlider', {
 });
 
 // section 4 category tabs
-let activeTab = "";
+let activeTab = null;
 const tabs = document.querySelectorAll('.section-4 .nav-pills button[data-bs-toggle="pill"]');
 tabs.forEach(tab => {
    tab.addEventListener('show.bs.tab', event => {
@@ -123,9 +81,12 @@ tabs.forEach(tab => {
 
 function setActiveTab(activeTab)
 {
-  const top  = activeTab.offsetTop;
-  const left = activeTab.offsetLeft - 8;
-  document.querySelector('.nav-pill-active-bg').style.transform = `translate(${left}px, ${top}px)`;
+  if (activeTab != null)
+  {
+    let top  = $(activeTab).position().top;
+    let left = $(activeTab).position().left;
+    document.querySelector('.nav-pill-active-bg').style.transform = `translate(${left}px, ${top}px)`;
+  }
 }
 
 // section 4 gif carousels
@@ -297,33 +258,79 @@ function resizeend() {
         setActiveTab(activeTab);
 
         // re-play timeline animation for screen size changes
-        let currSection = Scroller.getActiveSection().index;
-        if (currSection == 4)
+        // let currSection = Scroller.getActiveSection().index;
+        // if (currSection == 4)
           runAnimation();
     }
 }
 
 // svg arrow path timeline animation
 
-function runAnimation()
-{
-  let x1 = cli_icon.offsetLeft + cli_icon.getBoundingClientRect().width / 2;
-  let y1 = cli_icon.offsetTop + cli_icon.getBoundingClientRect().height / 2;
+// Arrow Path Animation
+gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(DrawSVGPlugin);
+let pathAnim = new TimelineMax();
 
-  let x2 = gui_icon.offsetLeft + gui_icon.getBoundingClientRect().width / 2;
-  let y2 = gui_icon.offsetTop + gui_icon.getBoundingClientRect().height / 2;
+let tablet    = false;
+let hasPlayed = false;
+let cli,
+    gui,
+    alexa,
+    botza,
+    path1,
+    path2,
+    path3,
+    cli_text,
+    gui_text,
+    alexa_text,
+    botza_text,
+    cli_icon,
+    gui_icon,
+    alexa_icon,
+    botza_icon;
 
-  let x3 = alexa_icon.offsetLeft + alexa_icon.getBoundingClientRect().width / 2;
-  let y3 = alexa_icon.offsetTop + alexa_icon.getBoundingClientRect().height / 2;
+cli        = $(".timeline .cli");
+gui        = $(".timeline .gui");
+alexa      = $(".timeline .alexa");
+botza      = $(".timeline .botza");
+path1      = $("svg#arrow-path #path1")[0];
+path2      = $("svg#arrow-path #path2")[0];
+path3      = $("svg#arrow-path #path3")[0];
 
-  let x4 = botza_icon.offsetLeft + botza_icon.getBoundingClientRect().width / 2;
-  let y4 = botza_icon.offsetTop + botza_icon.getBoundingClientRect().height / 2;
+cli_text   = $(".timeline .cli p");
+gui_text   = $(".timeline .gui p");
+alexa_text = $(".timeline .alexa p");
+botza_text = $(".timeline .botza p");
+
+cli_icon   = $(".timeline .cli > .icon");
+gui_icon   = $(".timeline .gui > .icon");
+alexa_icon = $(".timeline .alexa > .icon");
+botza_icon = $(".timeline .botza > .icon");
+
+function setPaths() {
+
+  let x1 = cli_icon.offset().left + cli_icon.outerWidth() / 2;
+  let y1 = cli_icon.offset().top + cli_icon.outerHeight() / 2;
+
+  let x2 = gui_icon.offset().left + gui_icon.outerWidth() / 2;
+  let y2 = gui_icon.offset().top + gui_icon.outerHeight() / 2;
+
+  let x3 = alexa_icon.offset().left + alexa_icon.outerWidth() / 2;
+  let y3 = alexa_icon.offset().top + alexa_icon.outerHeight() / 2;
+
+  let x4 = botza_icon.offset().left + botza_icon.outerWidth() / 2;
+  let y4 = botza_icon.offset().top + botza_icon.outerHeight() / 2;
 
   // ipad offsets && exclude mobiles
   if (y3 - y2 > 10 && x1 != x2)
   {
     tablet = true;
   }
+
+  // console.log ('setting paths');
+  // console.log(`path1: M${x1} ${y1} ${x2} ${y2}`);
+  // console.log(`path2: M${x2} ${y2} ${x3} ${y3}`);
+  // console.log(`path3: M${x3} ${y3} ${x4} ${y4}`);
 
   path1.setAttribute("d", `M${x1} ${y1} ${x2} ${y2}`);
   if (!tablet)
@@ -337,21 +344,25 @@ function runAnimation()
   }
 
   path3.setAttribute("d", `M${x3} ${y3} ${x4} ${y4}`);
+}
+
+function runAnimation()
+{
+  setPaths();
 
   if (hasPlayed)
   {
+    // console.log('resetting');
     // reset the arrow head position
     pathAnim
+    .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
+    .set(path1, {drawSVG: false})
+    .set(path2, {drawSVG: false})
     .set(path3, {drawSVG: false})
-    .to(path3,
-    {
-      duration: 0.6,
-      ease: 'power2',
-      drawSVG: true
-    },
-    "<0%"
-  )
-  .to("#arrow", {
+    .to(path1, {drawSVG: true})
+    .to(path2, {drawSVG: true})
+    .to(path3, {drawSVG: true})
+    .to("#arrow", {
       duration: 0.6,
       ease: 'power2',
       motionPath: {
@@ -361,11 +372,15 @@ function runAnimation()
         alignOrigin: [1, 0.5]
       }
     }, "<0%")
+    .to("#arrow", {
+        opacity: 1
+      }, "<0%"
+    )
     return false;
   }
 
   pathAnim
-  .set("svg#arrow-path .path", {xPercent:0, yPercent:0, transformOrigin:"center center", drawSVG: false})
+  .set("svg#arrow-path .path", {drawSVG: false})
   .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
   .set(cli, {opacity: 0, scale: 1.3})
   .set(gui, {opacity: 0, scale: 1.3})
@@ -514,3 +529,47 @@ function runAnimation()
   hasPlayed = true;
 }
 
+
+// invite code
+function sendRequest(email, type) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    let formData = new FormData();
+    formData.append("email", email);
+    $.ajax({
+      url: "https://api.botza.net/v1/subscribe/create",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+    }).then((data) => {
+      if (data.status == "success") {
+        $("#successModal").css("display", "flex");
+      } else {
+        $(`#error${type}`).text(data.error);
+        $(`#error${type}`).css("display", "block");
+        setTimeout(() => {
+          $(`#error${type}`).css("display", "none");
+        }, 3000);
+      }
+    });
+  } else {
+    $(`#error${type}`).text("Invalid email!");
+    $(`#error${type}`).css("display", "block");
+    setTimeout(() => {
+      $(`#error${type}`).css("display", "none");
+    }, 3000);
+  }
+}
+
+$("#inviteButton").on("click", (e) => {
+  let userEmail = $("#userEmail").val();
+  sendRequest(userEmail, "1");
+});
+
+$("#inviteButton2").on("click", (e) => {
+  let userEmail = $("#userEmail2").val();
+  sendRequest(userEmail, "2");
+});
+$(".closeModal").on("click", () => {
+  $("#successModal").css("display", "none");
+});
