@@ -95,7 +95,6 @@ function setActiveTab(activeTab)
 function initialSlide(slider)
 {
   const totalSlides = slider.querySelectorAll('.swiper-slide').length;
-  console.log(slider);
   return Math.ceil(totalSlides / 2) - 1;
 }
 
@@ -260,7 +259,7 @@ function resizeend() {
         // re-play timeline animation for screen size changes
         // let currSection = Scroller.getActiveSection().index;
         // if (currSection == 4)
-          runAnimation();
+          reSizeAnimation();
     }
 }
 
@@ -352,30 +351,7 @@ function runAnimation()
 
   if (hasPlayed)
   {
-    // console.log('resetting');
-    // reset the arrow head position
-    pathAnim
-    .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
-    .set(path1, {drawSVG: false})
-    .set(path2, {drawSVG: false})
-    .set(path3, {drawSVG: false})
-    .to(path1, {drawSVG: true})
-    .to(path2, {drawSVG: true})
-    .to(path3, {drawSVG: true})
-    .to("#arrow", {
-      duration: 0.6,
-      ease: 'power2',
-      motionPath: {
-        path: path3,
-        align: path3,
-        autoRotate: true,
-        alignOrigin: [1, 0.5]
-      }
-    }, "<0%")
-    .to("#arrow", {
-        opacity: 1
-      }, "<0%"
-    )
+    reSizeAnimation();
     return false;
   }
 
@@ -529,6 +505,32 @@ function runAnimation()
   hasPlayed = true;
 }
 
+function reSizeAnimation ()
+{
+    setPaths();
+    pathAnim
+    .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
+    .set(path1, {drawSVG: false})
+    .set(path2, {drawSVG: false})
+    .set(path3, {drawSVG: false})
+    .to(path1, {drawSVG: true})
+    .to(path2, {drawSVG: true})
+    .to(path3, {drawSVG: true})
+    .to("#arrow", {
+      duration: 0.6,
+      ease: 'power2',
+      motionPath: {
+        path: path3,
+        align: path3,
+        autoRotate: true,
+        alignOrigin: [1, 0.5]
+      }
+    }, "<0%")
+    .to("#arrow", {
+        opacity: 1
+      }, "<0%"
+    )
+}
 
 // invite code
 function sendRequest(email, type) {
