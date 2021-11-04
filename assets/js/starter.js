@@ -82,17 +82,11 @@ const macbookSlider = new Swiper('.macbookSlider', {
 });
 
 // section 4 category tabs
-
-// set the position for the first active tab
-window.onload = function() {
-  const initialTab = document.querySelector('.section-4 .nav-pills button[data-bs-toggle="pill"]');
-  setActiveTab(initialTab);
-};
-
+let activeTab = "";
 const tabs = document.querySelectorAll('.section-4 .nav-pills button[data-bs-toggle="pill"]');
 tabs.forEach(tab => {
    tab.addEventListener('show.bs.tab', event => {
-        const activeTab = event.target;
+        activeTab = event.target;
         setActiveTab(activeTab);
 
    });
@@ -201,7 +195,45 @@ function getSliderDirection() {
   return direction;
 }
 
-// svg arrow path timeline animation
+// preload assets
+const assets = [
+  '/assets/img/loading-macbook.png',
+  '/assets/img/bg vector - header.svg',
+  '/assets/img/bg-diffused.svg',
+  '/assets/img/section-2/section-2-bg.png',
+  '/assets/img/bg-diffused.svg',
+  '/assets/img/section-2/Skate.png',
+  '/assets/img/section-3/bg gradient-sec3.svg',
+  '/assets/img/section-3/macbook-icons/1o.svg',
+  '/assets/img/section-3/macbook-icons/1f.svg',
+  '/assets/img/section-3/macbook-icons/2o.svg',
+  '/assets/img/section-3/macbook-icons/2f.svg',
+  '/assets/img/section-3/macbook-icons/3o.svg',
+  '/assets/img/section-3/macbook-icons/3f.svg',
+  '/assets/img/section-3/macbook-icons/4o.svg',
+  '/assets/img/section-3/macbook-icons/4f.svg',
+  '/assets/img/section-5/cli-bg.svg',
+  '/assets/img/section-5/botza-bg.svg',
+  '/assets/img/section-5/alexa-bg.svg',
+  '/assets/img/section-5/gui-bg.svg',
+];
+
+assets.forEach((asset, index) => {
+  (new Image()).src = assets[index];
+});
+
+// set the position for the first active tab
+window.onload = function() {
+  const initialTab = document.querySelector('.section-4 .nav-pills button[data-bs-toggle="pill"]');
+  setActiveTab(initialTab);
+  setTimeout(function(){
+    // console.log("loaded");
+      document.getElementById("loader-wrapper").style.opacity = 0;
+      document.getElementById("loader-wrapper").style.zIndex = -9999;
+      // document.getElementById("loader-wrapper").remove();
+  }, 2000);
+};
+
 
 // add a small delay before firing resize event to make sure
 // that the user is done resizing the browser
@@ -230,12 +262,17 @@ function resizeend() {
             Sliders[Carousel].changeDirection(getSliderDirection());
         });
 
+        // set active tab margins again after browser reset
+        setActiveTab(activeTab);
+
         // re-play timeline animation for screen size changes
         let currSection = Scroller.getActiveSection().index;
         if (currSection == 4)
           runAnimation();
     }
 }
+
+// svg arrow path timeline animation
 
 function runAnimation()
 {

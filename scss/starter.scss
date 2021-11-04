@@ -343,6 +343,58 @@ a.underline {
   text-shadow: -1px -1px 0 $lighter-gray, 1px -1px 0 $lighter-gray, -1px 1px 0 $lighter-gray, 1px 1px 0 $lighter-gray;
 }
 
+#loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  background: linear-gradient(180deg, $gradient-blue 9.38%, $gradient-purple 100%);
+  z-index: 1000;
+  text-align: center !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: all 400ms ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url("/assets/img/loading-macbook.png") no-repeat center;
+    background-size: 50%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.1;
+  }
+
+  .botza-magic {
+    margin-bottom: 40px;
+    z-index: 1001;
+    img {
+      height: 260px;
+      width: auto;
+    }
+  }
+  .quote {
+    z-index: 1001;
+    text-transform: uppercase;
+    h2 {
+      color: #fff;
+      font-weight: 600;
+      font-size: 40px;
+      width: 75vw;
+      margin-bottom: 20px;
+    }
+    p {
+      color: #fff;
+    }
+  }
+}
+
 // main header container
 header {
   background: url('/assets/img/bg vector - header.svg') no-repeat;
