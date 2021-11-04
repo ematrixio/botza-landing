@@ -510,6 +510,9 @@ function runAnimation()
 
 function reSizeAnimation ()
 {
+    if (!hasPlayed)
+      return false;
+
     setPaths();
     pathAnim
     .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
