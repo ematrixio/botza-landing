@@ -396,10 +396,11 @@ a.underline {
 
 // main header container
 header {
-  background: url('/assets/img/bg vector - header.svg') no-repeat;
+  background: url('/assets/img/bg vector - header.png') no-repeat;
   background-size: contain;
   background-position-x: 50vw;
   background-position-y: -30vh;
+  background-size: 80%;
 
   // navbar
   nav.navbar {
@@ -1087,6 +1088,11 @@ header {
 @media only screen
   and (max-width: 1112px)
   {
+    header {
+      background-size: contain;
+      background-size: 100%;
+      background-position-y: 30vh;
+    }
     .body-overlay {
       overflow: hidden;
     }
