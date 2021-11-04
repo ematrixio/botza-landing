@@ -159,19 +159,19 @@ Crousels.forEach(Carousel => {
         // console.log(this)
         if (this.currentBreakpoint == "375")
         {
-          updateActiveBullet(Carousel);
+          updateActiveBullet(CarouselClass);
         }
       },
       snapIndexChange: function () {
         if (this.currentBreakpoint == "375")
         {
-          updateActiveBullet(Carousel);
+          updateActiveBullet(CarouselClass);
         }
       },
       slideChange: function () {
         if (this.currentBreakpoint == "375")
         {
-          updateActiveBullet(Carousel);
+          updateActiveBullet(CarouselClass);
         }
       },
     },

@@ -724,6 +724,7 @@ header {
         font-weight: 600;
         text-align: left;
         padding-left: 30px;
+        line-height: 1.2;
         // margin: 30px 0;
 
         &.active {
@@ -789,7 +790,9 @@ header {
           margin-top: -45px;
         }
       }
-
+      .comingSoonImg {
+        box-shadow: none !important;
+      }
       .paginationButton {
         background: #ffffff;
         box-shadow: 0px 3px 38px rgba(122, 199, 255, 0.29);
@@ -1041,8 +1044,13 @@ header {
 
 // portrait max
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1112px) {
   .section {
+    &.section-3 {
+      .macbookSlider {
+        text-align: center;
+      }
+    }
     &.section-4 {
       .nav-pills {
         margin: 0;
@@ -1216,7 +1224,7 @@ header {
 @media only screen
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+{
 
   .section {
     &.section-2 {
@@ -1367,11 +1375,12 @@ header {
         }
         .swiper-pagination-bullets {
           flex-direction: row;
+          // align-items: baseline;
           // overflow-x: auto;
           position: relative;
           // width: 100%;
           transition: transform 200ms ease-in;
-          margin-top: 10px;
+          margin-top: 20px;
           // justify-content: space-between;
 
           &::before {
