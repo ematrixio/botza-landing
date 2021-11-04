@@ -790,6 +790,18 @@ header {
         }
       }
 
+      .paginationButton {
+        background: #ffffff;
+        box-shadow: 0px 3px 38px rgba(122, 199, 255, 0.29);
+        border-radius: 1em;
+        border: none;
+        outline: none;
+        font-weight: 600;
+        font-family: inherit;
+        font-size: 1.1em;
+        padding: 1.625em;
+      }
+
       .swiper-pagination-bullet {
         height: auto;
         width: auto;
@@ -1338,7 +1350,7 @@ header {
       .nav-pills {
         .nav-link {
           width: 150px;
-          height: 40px;
+          height: 50px;
         }
       }
       .gifSliders {

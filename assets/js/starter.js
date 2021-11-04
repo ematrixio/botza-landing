@@ -1,3 +1,32 @@
+// Arrow Path Animation
+gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(DrawSVGPlugin);
+let pathAnim = new TimelineMax({
+    // repeat: -1,
+    // repeatDelay: 1
+    // delay: 1
+});
+let cli  = document.querySelector(".timeline .cli");
+let gui = document.querySelector(".timeline .gui");
+let alexa  = document.querySelector(".timeline .alexa");
+let botza = document.querySelector(".timeline .botza");
+let path1  = document.querySelector("svg#arrow-path #path1");
+let path2  = document.querySelector("svg#arrow-path #path2");
+let path3  = document.querySelector("svg#arrow-path #path3");
+
+let cli_text  = document.querySelector(".timeline .cli p");
+let gui_text = document.querySelector(".timeline .gui p");
+let alexa_text  = document.querySelector(".timeline .alexa p");
+let botza_text = document.querySelector(".timeline .botza p");
+
+let cli_icon  = document.querySelector(".timeline .cli > .icon");
+let gui_icon = document.querySelector(".timeline .gui > .icon");
+let alexa_icon  = document.querySelector(".timeline .alexa > .icon");
+let botza_icon = document.querySelector(".timeline .botza > .icon");
+
+let tablet = false;
+let hasPlayed = false;
+
 // section slider interface
 const Scroller = new fullpage('#fullpage', {
   //options here
@@ -104,18 +133,20 @@ function setActiveTab(activeTab)
 // get total slides
 function initialSlide(slider)
 {
-  const totalSlides = document.querySelectorAll(slider + ' .swiper-slide').length;
+  const totalSlides = slider.querySelectorAll('.swiper-slide').length;
+  console.log(slider);
   return Math.ceil(totalSlides / 2) - 1;
 }
 
-const Crousels = ['.cryptoSlider', '.hrSlider', '.developersSlider', '.seoToolsSlider', '.webmasterSlider'];
+const Crousels = document.querySelectorAll(".gifSliders .swiper");
 const Sliders = {};
 
 Crousels.forEach(Carousel => {
+  let CarouselClass = `.${Carousel.dataset.title}`;
   Sliders[Carousel] = new Swiper(Carousel, {
     // direction: 'horizontal',
     direction: getSliderDirection(),
-    // loop: true,
+    loop: true,
     allowTouchMove: false,
     preventClicks: false,
     autoHeight: true,
@@ -146,7 +177,7 @@ Crousels.forEach(Carousel => {
     },
 
     pagination: {
-      el: Carousel + '-pagination',
+      el: CarouselClass + '-pagination',
       clickable: true,
       dynamicBullets: true,
       renderBullet: function (index, className) {
@@ -276,26 +307,6 @@ function resizeend() {
 
 function runAnimation()
 {
-  let cli  = document.querySelector(".timeline .cli");
-  let gui = document.querySelector(".timeline .gui");
-  let alexa  = document.querySelector(".timeline .alexa");
-  let botza = document.querySelector(".timeline .botza");
-  let path1  = document.querySelector("svg#arrow-path #path1");
-  let path2  = document.querySelector("svg#arrow-path #path2");
-  let path3  = document.querySelector("svg#arrow-path #path3");
-
-  let cli_icon  = document.querySelector(".timeline .cli > .icon");
-  let gui_icon = document.querySelector(".timeline .gui > .icon");
-  let alexa_icon  = document.querySelector(".timeline .alexa > .icon");
-  let botza_icon = document.querySelector(".timeline .botza > .icon");
-
-  let cli_text  = document.querySelector(".timeline .cli p");
-  let gui_text = document.querySelector(".timeline .gui p");
-  let alexa_text  = document.querySelector(".timeline .alexa p");
-  let botza_text = document.querySelector(".timeline .botza p");
-
-  let tablet = false;
-
   let x1 = cli_icon.offsetLeft + cli_icon.getBoundingClientRect().width / 2;
   let y1 = cli_icon.offsetTop + cli_icon.getBoundingClientRect().height / 2;
 
@@ -326,13 +337,34 @@ function runAnimation()
   }
 
   path3.setAttribute("d", `M${x3} ${y3} ${x4} ${y4}`);
-  gsap.registerPlugin(MotionPathPlugin);
-  gsap.registerPlugin(DrawSVGPlugin);
-  let pathAnim = new TimelineMax({
-        // repeat: -1,
-        // repeatDelay: 1
-        // delay: 1
-    })
+
+  if (hasPlayed)
+  {
+    // reset the arrow head position
+    pathAnim
+    .set(path3, {drawSVG: false})
+    .to(path3,
+    {
+      duration: 0.6,
+      ease: 'power2',
+      drawSVG: true
+    },
+    "<0%"
+  )
+  .to("#arrow", {
+      duration: 0.6,
+      ease: 'power2',
+      motionPath: {
+        path: path3,
+        align: path3,
+        autoRotate: true,
+        alignOrigin: [1, 0.5]
+      }
+    }, "<0%")
+    return false;
+  }
+
+  pathAnim
   .set("svg#arrow-path .path", {xPercent:0, yPercent:0, transformOrigin:"center center", drawSVG: false})
   .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
   .set(cli, {opacity: 0, scale: 1.3})
@@ -478,5 +510,7 @@ function runAnimation()
       }
     }, "<0%"
   )
+
+  hasPlayed = true;
 }
 
