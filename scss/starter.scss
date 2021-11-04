@@ -381,10 +381,12 @@ a.underline {
   .quote {
     z-index: 1001;
     text-transform: uppercase;
+    line-height: 1.5;
+
     h2 {
       color: #fff;
       font-weight: 600;
-      font-size: 40px;
+      @include font-size(2.5rem);
       width: 75vw;
       margin-bottom: 20px;
     }
@@ -1087,6 +1089,24 @@ header {
 @media only screen
   and (max-width: 1112px)
   {
+    #loader-wrapper {
+      &::before {
+        background-size: 80%;
+      }
+      .botza-magic {
+        margin-bottom: 20px;
+        // z-index: 1001;
+        img {
+          height: 200px;
+        }
+      }
+      .quote {
+        h2 {
+          width: 90vw;
+          margin-bottom: 20px;
+        }
+      }
+    }
     header {
       background-position-x: 40vw;
       background-position-y: 60%;
