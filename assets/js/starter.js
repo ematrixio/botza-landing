@@ -1,30 +1,30 @@
 // section slider interface
-const Scroller = new fullpage('#fullpage', {
-  //options here
-  autoScrolling:true,
-  css3: true,
-  // scrollHorizontally: true,
-  lockAnchors: true,
-  lockAnchors: false, // to enable url navigation
-  // anchors:['section-1', 'section-2', 'section-3', 'section-4', 'section-5'],
-  navigation: true,
-  navigationPosition: 'right',
-  navigationTooltips: ['Home', 'Botza In Action', 'Panels', 'Power to Slack', 'Journey'],
-  fitToSection: true,
-  scrollOverflow: true,
+// const Scroller = new fullpage('#fullpage', {
+//   //options here
+//   autoScrolling:true,
+//   css3: true,
+//   // scrollHorizontally: true,
+//   lockAnchors: true,
+//   lockAnchors: false, // to enable url navigation
+//   // anchors:['section-1', 'section-2', 'section-3', 'section-4', 'section-5'],
+//   navigation: true,
+//   navigationPosition: 'right',
+//   navigationTooltips: ['Home', 'Botza In Action', 'Panels', 'Power to Slack', 'Journey'],
+//   fitToSection: true,
+//   scrollOverflow: true,
 
-  afterLoad: function(origin, destination, direction){
-    var loadedSection = this;
+//   afterLoad: function(origin, destination, direction){
+//     var loadedSection = this;
 
-    if(destination.index == 4 && direction == 'down') {
-      // play timeline animation
-      if (!hasPlayed)
-        runAnimation();
-      else
-        reSizeAnimation();
-    }
-  }
-});
+//     if(destination.index == 4 && direction == 'down') {
+//       // play timeline animation
+//       if (!hasPlayed)
+//         runAnimation();
+//       else
+//         reSizeAnimation();
+//     }
+//   }
+// });
 
 // header sliders
 
@@ -69,6 +69,20 @@ const macbookSlider = new Swiper('.macbookSlider', {
       return '<div class="' + className + '"><div class="icon"></div></div>';
     },
   },
+});
+
+// header headings slider
+const macbookDisplaySlider = new Swiper('.macbookDisplaySlider', {
+
+  direction: 'vertical',
+  allowTouchMove: false,
+  preventClicks: true,
+  autoHeight: true,
+  autoplay: false,
+});
+
+macbookSlider.on('slideChangeTransitionStart', function () {
+  macbookDisplaySlider.slideTo(this.realIndex);
 });
 
 // section 4 category tabs
@@ -553,29 +567,29 @@ function sendRequest(email, type) {
       if (data.status == "success") {
         $("#successModal").css("display", "flex");
       } else {
-        $(`#error${type}`).text(data.error);
-        $(`#error${type}`).css("display", "block");
+        $(`.error${type}`).text(data.error);
+        $(`.error${type}`).css("display", "block");
         setTimeout(() => {
-          $(`#error${type}`).css("display", "none");
+          $(`.error${type}`).css("display", "none");
         }, 3000);
       }
     });
   } else {
-    $(`#error${type}`).text("Invalid email!");
-    $(`#error${type}`).css("display", "block");
+    $(`.error${type}`).text("Invalid email!");
+    $(`.error${type}`).css("display", "block");
     setTimeout(() => {
-      $(`#error${type}`).css("display", "none");
+      $(`.error${type}`).css("display", "none");
     }, 3000);
   }
 }
 
-$("#inviteButton").on("click", (e) => {
-  let userEmail = $("#userEmail").val();
+$(".inviteButton").on("click", (e) => {
+  let userEmail = $(".userEmail").val();
   sendRequest(userEmail, "1");
 });
 
-$("#inviteButton2").on("click", (e) => {
-  let userEmail = $("#userEmail2").val();
+$(".inviteButton2").on("click", (e) => {
+  let userEmail = $(".userEmail2").val();
   sendRequest(userEmail, "2");
 });
 $(".closeModal").on("click", () => {

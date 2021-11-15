@@ -69,6 +69,7 @@ $font-size-base: 1rem;
 $font-weight-normal: 400;
 $font-weight-bolder: 600;
 $font-weight-bold: 700;
+$headings-line-height: 1.5;
 
 $font-weight-base: $font-weight-normal;
 
@@ -398,10 +399,13 @@ a.underline {
 
 // main header container
 header {
-  background: url('/assets/img/bg vector - header.png') no-repeat;
-  background-position-x: 50vw;
-  background-position-y: -30vh;
-  background-size: 150vh;
+  // header bg diffused
+  background: url('/assets/img/bg-diffused@2x.png') no-repeat;
+  background-size: 1200px;
+  min-height: 900px;
+  background-position-y: -100px;
+  background-position-x: calc((100vw - 1600px) / 2 - 500px);
+
 
   // navbar
   nav.navbar {
@@ -451,12 +455,22 @@ header {
   }
 
   section#header {
-    background: url('/assets/img/bg-diffused.svg') no-repeat -10% -50%;
-    background-size: contain;
-    height: 100vh !important;
+    background: url("/assets/img/bg vector - header.png");
+    background-repeat: no-repeat, no-repeat;
+    // height: 100vh;
+    // max-height: 1366px;
+    padding-top: 200px;
+    background-size: 1000px;
+    background-position-y: -300px;
+    background-position-x: calc(100% - ((100vw - 1600px) / 2) + 200px);
+
 
     h1 {
       color: #3A3A3A;
+      svg#infinity {
+        vertical-align: baseline;
+        // height: calc(1.525rem + 3.3vw);
+      }
     }
     p {
       @include font-size(1.3rem);
@@ -466,6 +480,19 @@ header {
     .container {
       z-index: 1;
       position: relative;
+
+      // &::before {
+      //   content: "";
+      //   background: url('/assets/img/bg vector - header.png') no-repeat;
+      //   background-size: contain;
+      //   position: absolute;
+      //   height: 900px;
+      //   display: block;
+      //   width: 900px;
+      //   top: -60%;
+      //   right: -20%;
+      //   z-index: -1;
+      // }
     }
   }
 }
@@ -473,18 +500,21 @@ header {
 .swiper.headerSlider {
   height: 400px;
 
-  .swiper-slide img{
-      // width:100% !important;
-      // height: 100%;
+  .swiper-slide
+  {
+    display: flex;
+    img {
       width: 100%;
       margin: auto;
-      display:block;
+      display: block;
+      object-fit: contain;
+    }
   }
 }
 
 .headerSliderHeadings {
   .swiper {
-    height: 80px;
+    height: 100px;
   }
 }
 
@@ -568,10 +598,16 @@ header {
     margin-bottom: 80px;
   }
   &.section-2 {
-    height: 100vh;
-    background: url('/assets/img/section-2/section-2-bg.png') no-repeat top center,
-                url('/assets/img/bg-diffused.svg') no-repeat right;
-    background-size: cover, 60%;
+    h5 {
+      letter-spacing: 0.05em;
+    }
+    // min-height: 100vh;
+    padding-top: 160px;
+    background: url('/assets/img/bg-diffused@2x.png') no-repeat right,
+                url('/assets/img/section-2/section-2-bg.png') no-repeat top center;
+    background-size: 1000px, cover;
+    background-position-x: calc(100% - 50vw + 1000px), 50%;
+    background-position-y: 200px, 0;
 
     .container {
       position: relative;
@@ -583,12 +619,13 @@ header {
     }
     .slack-demo {
       z-index: 1;
+      position: relative;
 
       &::before {
         content: url("/assets/img/section-2/Skate.png");
         z-index: -1;
         position: absolute;
-        left: 60px;
+        left: -35%;
         bottom: 0;
       }
 
@@ -599,11 +636,31 @@ header {
       .slack-client {
         width: 100%;
       }
+      .slack-play img {
+        height: 84px;
+        width: 84px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        margin-top: -42px;
+        margin-left: -42px;
+        transition: all 200ms;
+
+        &:hover {
+          scale: 1.1;
+        }
+      }
     }
   }
 
   &.section-3 {
-    height: 100vh;
+    h5 {
+      letter-spacing: 0.05em;
+    }
+    // min-height: 100vh;
+    padding-top: 160px;
 
     .container {
       position: relative;
@@ -628,6 +685,32 @@ header {
     }
     .col-macbook {
       position: relative;
+
+      .macbook-container {
+        position: relative;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        .macbookDisplaySlider {
+          // height: 450px;
+          // width: 680px;
+          height: 90%;
+          width: 79%;
+          position: absolute;
+          top: 6px;
+          z-index: -1;
+
+          .swiper-slide {
+            text-align: center;
+          }
+
+          img.macbook-slide {
+            // position: absolute;
+            width: 100%;
+          }
+        }
+      }
       img.macbook {
         width: 100%;
       }
@@ -637,6 +720,9 @@ header {
       height: 300px;
 
       .swiper-slide {
+        p {
+          letter-spacing: 0.04em;
+        }
         // height: 300px;
         // padding-bottom: 100px;
       }
@@ -647,7 +733,7 @@ header {
       transform:none;
       right: initial;
       left: initial;
-      top: 8%;
+      top: -20px;
       align-items: center;
       width: 100px;
       height: 80%;
@@ -695,7 +781,8 @@ header {
   }
 
   &.section-4 {
-    height: 100vh;
+    // min-height: 100vh;
+    padding-top: 160px;
 
     .container {
       position: relative;
@@ -706,8 +793,8 @@ header {
       justify-content: center;
     }
     // special case of inconsistent letter-spacing.
-    h6 {
-      letter-spacing: 0.08rem;
+    h5 {
+      letter-spacing: 0.05em;
     }
     .nav-pills {
       position: relative;
@@ -745,8 +832,18 @@ header {
       }
     }
     .gifSliders {
-      .swiper {
-        height: 500px;
+      .tab-content {
+        height: 100%;
+
+        .tab-pane {
+          height: 100%;
+          .row {
+            height: 100%;
+          }
+        }
+      }
+      .swiper, .swipers {
+        height: 100%;
       }
       .swiper-slide {
         // max-height: -webkit-max-content;
@@ -1028,16 +1125,55 @@ header {
 }
 
 // X-Large devices (large desktops, less than 1400px)
-@media (max-width: 1399.98px) {
-
+@media (min-width: 1599.98px) {
+  .section.section-3 {
+    .macbookSlider-pagination.swiper-pagination-bullets {
+      left: 40px;
+    }
+  }
 }
 
-/* ----------- Non-Retina Screens ----------- */
-@media screen
-  and (min-width: 1200px)
-  and (max-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1600px) {
+  .section.section-3 {
+    .col-macbook {
+      .macbook-container {
 
+        .macbookDisplaySlider {
+          // height: 386px;
+          // width: 590px;
+        }
+      }
+    }
+    .macbookSlider-pagination.swiper-pagination-bullets {
+      left: 36px;
+    }
+  }
+}
+
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1400px) {
+  header {
+
+    background-size: 800px;
+    background-position-y: 10%;
+    background-position-x: -300px;
+  }
+  .section.section-3 {
+    .col-macbook {
+      .macbook-container {
+
+        .macbookDisplaySlider {
+          // height: 330px;
+          // width: 510px;
+        }
+      }
+    }
+    .macbookSlider-pagination.swiper-pagination-bullets {
+      left: 26px;
+      height: 90%;
+    }
+  }
 }
 
 /* ----------- iPad Pro 12.9" ----------- */
@@ -1045,10 +1181,57 @@ header {
 // portrait max
 
 @media only screen and (max-width: 1200px) {
+
+header {
+
+  background-size: 800px;
+  background-position-y: 0;
+  background-position-x: -400px;
+
+  section#header {
+      background-size: 900px;
+      background-position-y: calc(50% + 100px);
+      background-position-x: calc(100% + 300px);
+
+      .container {
+        // &::before {
+        //   right: -50%;
+        //   top: 20%;
+        //   width: 100%;
+        // }
+
+          .swiper.headerSlider {
+            height: 360px;
+
+            .swiper-slide img {
+              height: 100%;
+              width: auto;
+            }
+          }
+      }
+  }
+}
   .section {
+    &.section-2 {
+      background-size: 700px, cover;
+      background-position-x: calc(100% + 200px), 50%;
+      background-position-y: 300px, 0;
+    }
     &.section-3 {
       .macbookSlider {
+        height: 240px;
         text-align: center;
+      }
+      .macbookSlider-pagination.swiper-pagination-bullets {
+        left: 36px;
+      }
+      .col-macbook {
+        .macbook-container {
+          .macbookDisplaySlider {
+            // height: 400px;
+            // width: 610px;
+          }
+        }
       }
     }
     &.section-4 {
@@ -1086,13 +1269,13 @@ header {
   and (max-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
-  .swiper.headerSlider {
-    height: 380px;
-  }
+  // .swiper.headerSlider {
+  //   height: 380px;
+  // }
 
-  .swiper.headerSliderHeadings {
-    height: 80px;
-  }
+  // .swiper.headerSliderHeadings {
+  //   height: 80px;
+  // }
   .section {
     &.section-2 {
       .slack-demo {
@@ -1107,8 +1290,23 @@ header {
 /* ----------- iPad Pro 10.5" ----------- */
 
 @media only screen
-  and (max-width: 1112px)
+  and (max-width: 992.98px)
   {
+    header {
+      min-height: auto;
+      height: auto;
+      background-size: 600px;
+      background-position-y: 0;
+      background-position-x: -300px;
+
+      section#header {
+        padding-top: 160px;
+        background-size: 700px;
+        background-position-y: calc(50% + 200px);
+        background-position-x: calc(100% + 300px);
+      }
+    }
+
     #loader-wrapper {
       &::before {
         background-size: 80%;
@@ -1127,11 +1325,6 @@ header {
         }
       }
     }
-    header {
-      background-position-x: 40vw;
-      background-position-y: 60%;
-      background-size: contain;
-    }
     .body-overlay {
       overflow: hidden;
     }
@@ -1146,6 +1339,11 @@ header {
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 99;
     }
+    // header {
+      // background-position-x: 40vw;
+      // background-position-y: 60%;
+      // background-size: contain;
+    // }
     header {
       nav.navbar {
         z-index: 100;
@@ -1198,9 +1396,9 @@ header {
       }
     }
 
-  .swiper.headerSlider {
-    height: 380px;
-  }
+  // .swiper.headerSlider {
+  //   height: 380px;
+  // }
 
   .headerSliderHeadings {
     .swiper {
@@ -1215,6 +1413,19 @@ header {
         }
       }
     }
+    &.section-3 {
+      .col-macbook {
+        .macbook-container {
+          .macbookDisplaySlider {
+            // height: 360px;
+            // width: 546px;
+          }
+        }
+      }
+      .macbookSlider-pagination.swiper-pagination-bullets {
+        left: 30px;
+      }
+    }
   }
 }
 
@@ -1222,20 +1433,53 @@ header {
 
 /* Portrait and Landscape */
 @media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
+  and (max-width: 768px)
 {
+  header {
+    section#header {
+      .container {
+        .swiper.headerSlider {
 
-  .section {
-    &.section-2 {
-      .slack-demo {
-        &::before {
-          display: none;
+          .swiper-slide img {
+            height: auto;
+            width: 100%;
+          }
         }
       }
     }
   }
+  .section {
+    &.section-2 {
+      background-size: 500px, cover;
+      background-position-x: calc(100% + 100px), 50%;
+      background-position-y: 300px, 0;
+    }
+    &.section-3 {
+      .col-macbook {
+        .macbook-container {
+          .macbookDisplaySlider {
+            // height: 265px;
+            // width: 406px;
+          }
+        }
+      }
+      .macbookSlider-pagination.swiper-pagination-bullets {
+        height: 94%;
+        left: 10px;
 
+        .swiper-pagination-bullet {
+            &.swiper-pagination-bullet-active > .icon {
+              height: 30px !important;
+              width: 30px !important;
+            }
+        }
+        .swiper-pagination-bullet-active {
+          height: 70px !important;
+          width: 70px !important;
+        }
+      }
+    }
+  }
 }
 
 /* ----------- iPhone X ----------- */
@@ -1272,13 +1516,28 @@ header {
     display: none;
   }
 
-  section#header {
-    padding-top: 40px;
-    svg#infinity {
-      width: auto;
-      height: 1.7rem;
+  header {
+      // background-size: 600px;
+      // background-position-y: 0%;
+      // background-position-x: 30%;
+
+      section#header {
+        // padding-top: 40px;
+        background-size: 500px;
+        background-position-y: calc(50% + 150px);
+        background-position-x: calc(100% + 200px);
+      }
     }
-  }
+  // section#header {
+    // .container {
+    //   &::before {
+    //     height: 450px;
+    //     width: 100%;
+    //     top: 20%;
+    //     right: -30%;
+    //   }
+    // }
+  // }
 
   .swiper.headerSlider {
     height: 160px;
@@ -1319,12 +1578,36 @@ header {
         }
       }
     }
+    &.section-2 {
+      background-size: 300px, cover;
+      background-position-x: calc(100% + 100px), 50%;
+      background-position-y: 200px, 0;
+
+      .container {
+        .slack-demo {
+          .slack-play img {
+            height: 44px;
+            width: 44px;
+            margin-top: -22px;
+            margin-left: -22px;
+          }
+        }
+      }
+    }
     &.section-3 {
       height: 100%;
       padding-top: 40px;
       // a quick witted dashboard
       h3 {
         font-size: 1.3rem;
+      }
+      .col-macbook {
+        .macbook-container {
+          .macbookDisplaySlider {
+            // height: 90%;
+            // width: 79%;
+          }
+        }
       }
       .macbookSlider {
         text-align: center;
@@ -1474,7 +1757,6 @@ header {
 }
 
 .inviteBox2 {
-  display: flex;
   align-items: baseline;
   gap: 1.875em;
 }
@@ -1496,7 +1778,7 @@ header {
   font-family: "Montserrat";
 }
 
-#userEmail2 {
+.userEmail2 {
   width: 21.1875em;
   height: 3em;
   background-color: transparent;
@@ -1512,20 +1794,6 @@ header {
   color: rgba(58, 58, 58, 0.3);
 }
 
-#inviteButton2 {
-  border: none;
-  outline: none;
-  background: linear-gradient(267.68deg, #725aff 9.38%, #418de8 100%);
-  font-size: 1.25em;
-  right: 1.5em;
-  top: 0.6em;
-  white-space: nowrap;
-  color: white;
-  font-family: "Montserrat";
-  font-weight: 600;
-  border-radius: 1.25em;
-  padding: 0.89em 1.67em;
-}
 
 .poweredByText {
   font-size: 0.8125em;
@@ -1580,8 +1848,8 @@ header {
   right: 2em;
 }
 
-#error2,
-#error1 {
+.error2,
+.error1 {
   color: #ff1e1e !important;
   font-size: 1.125em !important;
   font-weight: 600;
