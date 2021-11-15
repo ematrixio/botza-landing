@@ -333,7 +333,7 @@ a.underline {
 }
 
 .text-gradient {
-  background: linear-gradient(267.68deg, $gradient-blue 0%, $gradient-purple 100%);
+  background: linear-gradient(180deg, $gradient-blue 0%, $gradient-purple 100%);
   background-clip: text;
   border: solid 1px transparent;
   color: transparent !important;
@@ -342,6 +342,10 @@ a.underline {
 .text-outlined {
   color: #fff;
   text-shadow: -1px -1px 0 $lighter-gray, 1px -1px 0 $lighter-gray, -1px 1px 0 $lighter-gray, 1px 1px 0 $lighter-gray;
+}
+
+.text-shadow {
+  text-shadow: 30px 10px 14px rgba(147, 156, 254, 0.8);
 }
 
 #loader-wrapper {
@@ -467,10 +471,15 @@ header {
 
     h1 {
       color: #3A3A3A;
+      margin-top: 80px;
+
       svg#infinity {
         vertical-align: baseline;
         // height: calc(1.525rem + 3.3vw);
       }
+    }
+    img.slack-brand {
+      vertical-align: bottom;
     }
     p {
       @include font-size(1.3rem);
@@ -1192,6 +1201,10 @@ header {
       background-size: 900px;
       background-position-y: calc(50% + 100px);
       background-position-x: calc(100% + 300px);
+
+      h1 {
+        margin-top: 0;
+      }
 
       .container {
         // &::before {
