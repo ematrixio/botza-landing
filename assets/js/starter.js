@@ -245,6 +245,7 @@ window.onload = function() {
       // run header h1 text animations
       headerTextAnimations();
   }, 500);
+
 };
 
 
@@ -351,15 +352,15 @@ function setPaths() {
 
 
 
-  console.log($('.section-5 .container').offset().top);
-  console.log(cli_icon.offset().top);
-  console.log(gui_icon.offset().top);
-  console.log(alexa_icon.offset().top);
-  console.log(botza_icon.offset().top);
-  console.log(cli_icon.position().top);
-  console.log(gui_icon.position().top);
-  console.log(alexa_icon.position().top);
-  console.log(botza_icon.position().top);
+  // console.log($('.section-5 .container').offset().top);
+  // console.log(cli_icon.offset().top);
+  // console.log(gui_icon.offset().top);
+  // console.log(alexa_icon.offset().top);
+  // console.log(botza_icon.offset().top);
+  // console.log(cli_icon.position().top);
+  // console.log(gui_icon.position().top);
+  // console.log(alexa_icon.position().top);
+  // console.log(botza_icon.position().top);
   // ipad offsets && exclude mobiles
   if (y3 - y2 > 10 && x1 != x2)
   {
@@ -368,10 +369,10 @@ function setPaths() {
   else
     tablet = false;
 
-  console.log ('setting paths');
-  console.log(`path1: M${x1} ${y1} ${x2} ${y2}`);
-  console.log(`path2: M${x2} ${y2} ${x3} ${y3}`);
-  console.log(`path3: M${x3} ${y3} ${x4} ${y4}`);
+  // console.log ('setting paths');
+  // console.log(`path1: M${x1} ${y1} ${x2} ${y2}`);
+  // console.log(`path2: M${x2} ${y2} ${x3} ${y3}`);
+  // console.log(`path3: M${x3} ${y3} ${x4} ${y4}`);
 
   path1.setAttribute("d", `M${x1} ${y1} ${x2} ${y2}`);
   if (!tablet)
@@ -566,40 +567,12 @@ function reSizeAnimation ()
     // if (!hasPlayed)
     //   return false;
 
-    // setPaths();
     pathAnim.kill();
 
 
     // $("svg#arrow-path #arrow").css("transform", `none`);
     pathAnim = new gsap.timeline();
     runAnimation();
-
-    return false;
-
-    pathAnim.restart();
-    return false;
-    pathAnim
-    .set("svg#arrow-path #arrow", {opacity: 0})
-    .set(path1, {drawSVG: false})
-    .set(path2, {drawSVG: false})
-    .set(path3, {drawSVG: false})
-    .to(path1, {drawSVG: true})
-    .to(path2, {drawSVG: true})
-    .to(path3, {drawSVG: true})
-    .to("#arrow", {
-      duration: 0.6,
-      ease: 'power2',
-      motionPath: {
-        path: path3,
-        align: path3,
-        autoRotate: true,
-        alignOrigin: [1, 0.5]
-      }
-    }, "<0%")
-    .to("#arrow", {
-        opacity: 1
-      }, "<0%"
-    )
 }
 
 function headerTextAnimations() {
@@ -628,25 +601,19 @@ function headerTextAnimations() {
     x: 0,
     opacity: 1,
   }, "<0%")
-  .to('svg#infinity', {
-    duration: 0.3,
-    rotation: 180,
-    ease: 'Power0.easeNone'
-  }, "+=0.3");
-
-function ScrollTo(target, speed = 500)
-{
-  $('html, body').animate({
-      scrollTop: $(target).offset().top
-  }, speed);
-}
+  // .to('svg#infinity', {
+  //   duration: 0.3,
+  //   rotation: 180,
+  //   ease: 'Power0.easeNone'
+  // }, "+=0.3");
 
 $(".scrollTo").click(function(e) {
   e.preventDefault();
   $('#fp-nav a').removeClass('active');
   $(this).addClass('active');
-  ScrollTo(this.hash, 700);
+  window.scrollTo({top: $(this.hash).offset().top, behavior: 'smooth'})
 });
+
 
   // let h1Anims = new gsap.timeline();
   // h1Anims

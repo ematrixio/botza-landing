@@ -43,8 +43,8 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px,
-  xxxl: 1600px
+  xxl: 1500px,
+  // xxxl: 1600px
 );
 // scss-docs-end grid-breakpoints
 
@@ -58,8 +58,8 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1320px,
-  xxxl: 1520px,
+  xxl: 1464px,
+  // xxxl: 1520px,
 );
 // scss-docs-end container-max-widths
 
@@ -255,7 +255,9 @@ $link-decoration: none;
   width: auto;
   padding: .5rem 1rem;
 }
-
+.container {
+  outline: 1px solid red;
+}
 .btn-primary {
   color: #fff;
   background: linear-gradient(to right, $gradient-purple 0%, $gradient-blue 50%, $gradient-purple 100%);
@@ -272,7 +274,7 @@ $link-decoration: none;
 }
 
 .btn-outline-primary {
-  background: linear-gradient(267.68deg, $gradient-blue 0%, $gradient-purple 100%);
+  background: linear-gradient(180deg, $gradient-blue 0%, $gradient-purple 100%);
   background-clip: text;
   border: solid 1px transparent;
   color: transparent;
@@ -288,7 +290,7 @@ $link-decoration: none;
     border-radius: inherit;
     margin: -1px;
     border: solid 1px transparent;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(267.68deg, $gradient-blue 0%, $gradient-purple 100%);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(180deg, $gradient-blue 0%, $gradient-purple 100%);
     background-origin: border-box;
     background-clip: content-box, border-box;
     box-shadow: 2px 1000px 1px #fff inset;
@@ -307,7 +309,7 @@ $link-decoration: none;
 }
 
 .btn-secondary, .btn-secondary:hover {
-  background: linear-gradient(267.68deg, $gradient-blue 0%, $gradient-purple 100%);
+  background: linear-gradient(180deg, $gradient-blue 0%, $gradient-purple 100%);
   background-clip: text;
   border: solid 1px transparent;
   color: transparent;
@@ -455,7 +457,9 @@ a.underline {
     }
   }
 }
-
+body {
+  position: relative;
+}
 // main header container
 header {
   // header bg diffused
@@ -505,11 +509,7 @@ header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-right: 20px;
-
-        &::last-child {
-          margin-right: 0px;
-        }
+        margin-left: 20px;
       }
     }
   }
@@ -702,8 +702,8 @@ header {
         content: url("/assets/img/section-2/Skate.png");
         z-index: -1;
         position: absolute;
-        left: -35%;
-        bottom: 0;
+        left: -308px;
+        bottom: -58px;
       }
 
       .slack-skate {
@@ -712,6 +712,7 @@ header {
 
       .slack-client {
         width: 100%;
+        max-height: 594px;
       }
       .slack-play img {
         height: 84px;
@@ -860,18 +861,18 @@ header {
 
   &.section-4 {
     // min-height: 100vh;
-    margin-top: 160px;
+    padding-top: 160px;
     padding-bottom: 160px;
     background: url('/assets/img/section-4-sliders/section-4-bg.png') no-repeat bottom left;
     background-size: contain;
 
     .container {
       position: relative;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      // height: 100%;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+      // justify-content: center;
     }
     // special case of inconsistent letter-spacing.
     h5 {
@@ -1236,7 +1237,7 @@ header {
 }
 
 // X-Large devices (large desktops, less than 1400px)
-@media (max-width: 1400px) {
+@media (max-width: 1500px) {
   header {
 
     background-size: 800px;
@@ -1727,7 +1728,7 @@ header {
     }
     &.section-4 {
       height: 100%;
-      margin-top: 120px;
+      padding-top: 120px;
       padding-bottom: 120px;
 
       .nav-pills {
@@ -1850,7 +1851,6 @@ header {
 
 .inviteBox2 {
   align-items: baseline;
-  gap: 1.875em;
 }
 
 .inviteTextBox {
