@@ -1663,6 +1663,7 @@ header {
       }
     }
     &.section-2 {
+      padding-top: 120px;
       background-size: 300px, cover;
       background-position-x: calc(100% + 100px), 50%;
       background-position-y: 200px, 0;
@@ -1680,7 +1681,7 @@ header {
     }
     &.section-3 {
       height: 100%;
-      padding-top: 40px;
+      padding-top: 120px;
       // a quick witted dashboard
       h3 {
         font-size: 1.3rem;
@@ -1695,7 +1696,7 @@ header {
       }
       .macbookSlider {
         text-align: center;
-        height: 140px
+        height: 180px
       }
       .macbookSlider-pagination {
         flex-direction: row !important;
@@ -1721,6 +1722,8 @@ header {
     }
     &.section-4 {
       height: 100%;
+      margin-top: 120px;
+      padding-bottom: 120px;
 
       .nav-pills {
         .nav-link {
