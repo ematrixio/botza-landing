@@ -634,6 +634,20 @@ function headerTextAnimations() {
     ease: 'Power0.easeNone'
   }, "+=0.3");
 
+function ScrollTo(target, speed = 500)
+{
+  $('html, body').animate({
+      scrollTop: $(target).offset().top
+  }, speed);
+}
+
+$(".scrollTo").click(function(e) {
+  e.preventDefault();
+  $('#fp-nav a').removeClass('active');
+  $(this).addClass('active');
+  ScrollTo(this.hash, 700);
+});
+
   // let h1Anims = new gsap.timeline();
   // h1Anims
   // .to('section#header h1', {
