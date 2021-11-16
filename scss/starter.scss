@@ -42,8 +42,8 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px,
-  xxl: 1500px,
+  xl: 1280px,
+  xxl: 1620px,
   // xxxl: 1600px
 );
 // scss-docs-end grid-breakpoints
@@ -570,7 +570,8 @@ header {
 }
 
 .swiper.headerSlider {
-  height: 400px;
+  height: 420px;
+  margin-right: -104px;
 
   .swiper-slide
   {
@@ -585,6 +586,7 @@ header {
 }
 
 .headerSliderHeadings {
+  margin-left: 104px;
   .swiper {
     height: 100px;
   }
@@ -1237,12 +1239,21 @@ header {
 }
 
 // X-Large devices (large desktops, less than 1400px)
-@media (max-width: 1500px) {
+@media (max-width: 1620px) {
   header {
 
     background-size: 800px;
     background-position-y: 10%;
     background-position-x: -300px;
+
+
+    .swiper.headerSlider {
+      margin-right: -80px;
+      height: 320px;
+    }
+    .headerSliderHeadings {
+      margin-left: 80px;
+    }
   }
   .section.section-3 {
     .col-macbook {
@@ -1265,7 +1276,7 @@ header {
 
 // portrait max
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1280px) {
 
 header {
 
@@ -1292,11 +1303,15 @@ header {
 
           .swiper.headerSlider {
             height: 360px;
+            margin: auto;
 
             .swiper-slide img {
               height: 100%;
               width: auto;
             }
+          }
+          .headerSliderHeadings {
+            margin: auto;
           }
       }
   }
@@ -1487,7 +1502,7 @@ header {
     }
 
   // .swiper.headerSlider {
-  //   height: 380px;
+  //   margin: auto;
   // }
 
   .headerSliderHeadings {

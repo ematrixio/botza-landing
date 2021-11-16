@@ -34,7 +34,7 @@ const headerSlider = new Swiper('.headerSlider', {
   autoplay: true,
   allowTouchMove: false,
   preventClicks: true,
-  // spaceBetween: 10,
+  spaceBetween: 0,
 });
 
 // header headings slider
