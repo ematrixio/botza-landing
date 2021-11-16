@@ -117,9 +117,11 @@ function initialSlide(slider)
 
 const Crousels = document.querySelectorAll(".gifSliders .swiper");
 const Sliders = {};
-
+$('.gifSliders .swiper').height($('.gifSliders').height());
 Crousels.forEach(Carousel => {
+
   let CarouselClass = `.${Carousel.dataset.title}`;
+
   Sliders[Carousel] = new Swiper(Carousel, {
     // direction: 'horizontal',
     direction: getSliderDirection(),
@@ -239,6 +241,9 @@ window.onload = function() {
       document.getElementById("loader-wrapper").style.opacity = 0;
       document.getElementById("loader-wrapper").style.zIndex = -9999;
       // document.getElementById("loader-wrapper").remove();
+
+      // run header h1 text animations
+      headerTextAnimations();
   }, 500);
 };
 
@@ -247,7 +252,7 @@ window.onload = function() {
 // that the user is done resizing the browser
 var rtime;
 var timeout = false;
-var delta = 200;
+var delta = 500;
 window.addEventListener('resize', function() {
 
     rtime = new Date();
@@ -277,6 +282,7 @@ function resizeend() {
         // let currSection = Scroller.getActiveSection().index;
         // if (currSection == 4)
           reSizeAnimation();
+          // setPaths();
     }
 }
 
@@ -285,7 +291,8 @@ function resizeend() {
 // Arrow Path Animation
 gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(DrawSVGPlugin);
-let pathAnim = new TimelineMax();
+gsap.registerPlugin(ScrollTrigger)
+let pathAnim = new gsap.timeline();
 
 let tablet    = false;
 let hasPlayed = false;
@@ -323,30 +330,48 @@ gui_icon   = $(".timeline .gui > .icon");
 alexa_icon = $(".timeline .alexa > .icon");
 botza_icon = $(".timeline .botza > .icon");
 
+
+runAnimation();
+
+
+
 function setPaths() {
 
-  let x1 = cli_icon.offset().left + cli_icon.outerWidth() / 2;
-  let y1 = cli_icon.offset().top + cli_icon.outerHeight() / 2;
+  let x1 = (cli_icon.offset().left - $('.section-5 .container').offset().left) + cli_icon.innerWidth() / 2;
+  let y1 = (cli_icon.offset().top - $('.section-5 .container').offset().top) + cli_icon.innerHeight() / 2;
 
-  let x2 = gui_icon.offset().left + gui_icon.outerWidth() / 2;
-  let y2 = gui_icon.offset().top + gui_icon.outerHeight() / 2;
+  let x2 = (gui_icon.offset().left - $('.section-5 .container').offset().left) + gui_icon.innerWidth() / 2;
+  let y2 = (gui_icon.offset().top - $('.section-5 .container').offset().top) + gui_icon.innerHeight() / 2;
 
-  let x3 = alexa_icon.offset().left + alexa_icon.outerWidth() / 2;
-  let y3 = alexa_icon.offset().top + alexa_icon.outerHeight() / 2;
+  let x3 = (alexa_icon.offset().left - $('.section-5 .container').offset().left) + alexa_icon.innerWidth() / 2;
+  let y3 = (alexa_icon.offset().top - $('.section-5 .container').offset().top) + alexa_icon.innerHeight() / 2;
 
-  let x4 = botza_icon.offset().left + botza_icon.outerWidth() / 2;
-  let y4 = botza_icon.offset().top + botza_icon.outerHeight() / 2;
+  let x4 = (botza_icon.offset().left - $('.section-5 .container').offset().left) + botza_icon.innerWidth() / 2;
+  let y4 = (botza_icon.offset().top - $('.section-5 .container').offset().top) + botza_icon.innerHeight() / 2;
 
+
+
+  console.log($('.section-5 .container').offset().top);
+  console.log(cli_icon.offset().top);
+  console.log(gui_icon.offset().top);
+  console.log(alexa_icon.offset().top);
+  console.log(botza_icon.offset().top);
+  console.log(cli_icon.position().top);
+  console.log(gui_icon.position().top);
+  console.log(alexa_icon.position().top);
+  console.log(botza_icon.position().top);
   // ipad offsets && exclude mobiles
   if (y3 - y2 > 10 && x1 != x2)
   {
     tablet = true;
   }
+  else
+    tablet = false;
 
-  // console.log ('setting paths');
-  // console.log(`path1: M${x1} ${y1} ${x2} ${y2}`);
-  // console.log(`path2: M${x2} ${y2} ${x3} ${y3}`);
-  // console.log(`path3: M${x3} ${y3} ${x4} ${y4}`);
+  console.log ('setting paths');
+  console.log(`path1: M${x1} ${y1} ${x2} ${y2}`);
+  console.log(`path2: M${x2} ${y2} ${x3} ${y3}`);
+  console.log(`path3: M${x3} ${y3} ${x4} ${y4}`);
 
   path1.setAttribute("d", `M${x1} ${y1} ${x2} ${y2}`);
   if (!tablet)
@@ -365,24 +390,23 @@ function setPaths() {
 function runAnimation()
 {
   setPaths();
-
-  if (hasPlayed)
-  {
-    reSizeAnimation();
-    return false;
-  }
-
+  // if (hasPlayed)
+  // {
+  //   reSizeAnimation();
+  //   return false;
+  // }
   pathAnim
   .set("svg#arrow-path .path", {drawSVG: false})
-  .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
-  .set(cli, {opacity: 0, scale: 1.3})
-  .set(gui, {opacity: 0, scale: 1.3})
-  .set(alexa, {opacity: 0, scale: 1.3})
-  .set(botza, {opacity: 0, scale: 1.3})
+  .set("svg#arrow-path #arrow", {opacity: 0})
+  // .set(cli, {opacity: 0, scale: 1.3})
+  // .set(gui, {opacity: 0, scale: 1.3})
+  // .set(alexa, {opacity: 0, scale: 1.3})
+  // .set(botza, {opacity: 0, scale: 1.3})
   .set(cli_text, {fontWeight: "600", color: "#767676"})
   .set(gui_text, {fontWeight: "600", color: "#767676"})
   .set(alexa_text, {fontWeight: "600", color: "#767676"})
   .set(botza_text, {fontWeight: "600", color: "#767676"})
+  .add()
   .to(cli, {
       scale: 1,
       opacity: 1,
@@ -519,17 +543,43 @@ function runAnimation()
     }, "<0%"
   )
 
-  hasPlayed = true;
+  ScrollTrigger.create({
+    animation: pathAnim,
+    trigger: ".timeline",
+    // markers: true,
+    // once: true,
+    onUpdate: function () {
+      // console.log($(".timeline .cli > .icon").offset().top);
+    },
+    scrub: true,
+    // pin: true,   // pin the trigger element while active
+    start: "top 90%", // when the top of the trigger hits the top of the viewport
+    end: "bottom 70%", // end after scrolling 500px beyond the start
+    // scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+  });
+
+  // hasPlayed = true;
 }
 
 function reSizeAnimation ()
 {
-    if (!hasPlayed)
-      return false;
+    // if (!hasPlayed)
+    //   return false;
 
-    setPaths();
+    // setPaths();
+    pathAnim.kill();
+
+
+    // $("svg#arrow-path #arrow").css("transform", `none`);
+    pathAnim = new gsap.timeline();
+    runAnimation();
+
+    return false;
+
+    pathAnim.restart();
+    return false;
     pathAnim
-    .set("svg#arrow-path #arrow", {xPercent:0, yPercent:0, transformOrigin:"center center", opacity: 0})
+    .set("svg#arrow-path #arrow", {opacity: 0})
     .set(path1, {drawSVG: false})
     .set(path2, {drawSVG: false})
     .set(path3, {drawSVG: false})
@@ -550,6 +600,74 @@ function reSizeAnimation ()
         opacity: 1
       }, "<0%"
     )
+}
+
+function headerTextAnimations() {
+  let h1Anim = new gsap.timeline();
+  h1Anim
+  .fromTo('.h1AnimOne', {opacity: 0}, {
+    duration: 0.1,
+    opacity: 1,
+  }, "+=0.4")
+  .fromTo('.h1AnimApp', {opacity: 0}, {
+    duration: 0.1,
+    opacity: 1,
+  }, "+=0.3")
+  .fromTo('.h1AnimPossib, svg#infinity', {opacity: 0, y: 10}, {
+    duration: 0.3,
+    y: 0,
+    opacity: 1,
+  }, "+=0.5")
+  .fromTo('section#header p', {opacity: 0, y: 10}, {
+    duration: 0.3,
+    y: 0,
+    opacity: 1,
+  }, "+=0.2")
+  .fromTo('.inviteBox2', {opacity: 0, x: -200}, {
+    duration: 0.3,
+    x: 0,
+    opacity: 1,
+  }, "<0%")
+  .to('svg#infinity', {
+    duration: 0.3,
+    rotation: 180,
+    ease: 'Power0.easeNone'
+  }, "+=0.3");
+
+  let h1Anims = new gsap.timeline();
+  h1Anims
+  .to('section#header h1', {
+    skewX: -30,
+  }, 0)
+  .to('section#header h1', {
+    x: -600,
+  }, "<5%")
+  .to('section#header .headerSlider', {
+    // skewY: -20,
+    skewX: -20,
+    opacity: 0,
+    x: 800,
+  }, "<20%")
+  .to('section#header .headerSliderHeadings', {
+    x: 700,
+    opacity: 0,
+  }, "<40%")
+  .to('section#header p', {
+    x: -600,
+  }, "<25%")
+  .to('section#header .inviteBox2', {
+    x: -600,
+    opacity: 0,
+  }, "<40%")
+  ScrollTrigger.create({
+    animation: h1Anims,
+    trigger: 'section#header',
+    markers: true,
+    start: 'bottom 70%',
+    // end: 'bottom 300px',
+    scrub: true,
+    // ease: 'Power0.easeNone'
+  });
 }
 
 // invite code
