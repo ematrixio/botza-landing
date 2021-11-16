@@ -634,40 +634,40 @@ function headerTextAnimations() {
     ease: 'Power0.easeNone'
   }, "+=0.3");
 
-  let h1Anims = new gsap.timeline();
-  h1Anims
-  .to('section#header h1', {
-    skewX: -30,
-  }, 0)
-  .to('section#header h1', {
-    x: -600,
-  }, "<5%")
-  .to('section#header .headerSlider', {
-    // skewY: -20,
-    skewX: -20,
-    opacity: 0,
-    x: 800,
-  }, "<20%")
-  .to('section#header .headerSliderHeadings', {
-    x: 700,
-    opacity: 0,
-  }, "<40%")
-  .to('section#header p', {
-    x: -600,
-  }, "<25%")
-  .to('section#header .inviteBox2', {
-    x: -600,
-    opacity: 0,
-  }, "<40%")
-  ScrollTrigger.create({
-    animation: h1Anims,
-    trigger: 'section#header',
-    // markers: true,
-    start: 'bottom 60%',
-    // end: 'bottom 300px',
-    scrub: true,
-    // ease: 'Power0.easeNone'
-  });
+  // let h1Anims = new gsap.timeline();
+  // h1Anims
+  // .to('section#header h1', {
+  //   skewX: -30,
+  // }, 0)
+  // .to('section#header h1', {
+  //   x: -600,
+  // }, "<5%")
+  // .to('section#header .headerSlider', {
+  //   // skewY: -20,
+  //   skewX: -20,
+  //   opacity: 0,
+  //   x: 800,
+  // }, "<20%")
+  // .to('section#header .headerSliderHeadings', {
+  //   x: 700,
+  //   opacity: 0,
+  // }, "<40%")
+  // .to('section#header p', {
+  //   x: -600,
+  // }, "<25%")
+  // .to('section#header .inviteBox2', {
+  //   x: -600,
+  //   opacity: 0,
+  // }, "<40%")
+  // ScrollTrigger.create({
+  //   animation: h1Anims,
+  //   trigger: 'section#header',
+  //   // markers: true,
+  //   start: 'bottom 60%',
+  //   // end: 'bottom 300px',
+  //   scrub: true,
+  //   // ease: 'Power0.easeNone'
+  // });
 }
 
 // invite code

@@ -469,7 +469,7 @@ header {
 
   // navbar
   nav.navbar {
-
+    margin-bottom: 60px;
     .navbar-toggler {
       background: none;
       border: none;
@@ -519,7 +519,7 @@ header {
     background-repeat: no-repeat, no-repeat;
     // height: 100vh;
     // max-height: 1366px;
-    padding-top: 200px;
+    // padding-top: 200px;
     background-size: 1000px;
     background-position-y: -300px;
     background-position-x: calc(100% - ((100vw - 1600px) / 2) + 200px);
@@ -1384,7 +1384,7 @@ header {
       background-position-x: -300px;
 
       section#header {
-        padding-top: 160px;
+        // padding-top: 160px;
         background-size: 700px;
         background-position-y: calc(50% + 200px);
         background-position-x: calc(100% + 300px);
