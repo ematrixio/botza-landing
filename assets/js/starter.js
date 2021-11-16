@@ -117,7 +117,7 @@ function initialSlide(slider)
 
 const Crousels = document.querySelectorAll(".gifSliders .swiper");
 const Sliders = {};
-$('.gifSliders .swiper').height($('.gifSliders').height());
+$('.gifSliders .swiper, .swiperx').height($('.gifSliders').height());
 Crousels.forEach(Carousel => {
 
   let CarouselClass = `.${Carousel.dataset.title}`;
@@ -662,8 +662,8 @@ function headerTextAnimations() {
   ScrollTrigger.create({
     animation: h1Anims,
     trigger: 'section#header',
-    markers: true,
-    start: 'bottom 70%',
+    // markers: true,
+    start: 'bottom 60%',
     // end: 'bottom 300px',
     scrub: true,
     // ease: 'Power0.easeNone'

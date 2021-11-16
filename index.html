@@ -32,7 +32,7 @@
                 <a class="navbar-brand" href="/">
                   <img src="assets/img/Botza Logo.svg" title="Botza" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-toggler d-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M22.4616 4.30739H1.53848C0.688594 4.30739 0 3.6188 0 2.76895C0 1.91911 0.688594 1.23047 1.53848 1.23047H22.4616C23.3114 1.23047 24 1.91906 24 2.76895C24 3.61884 23.3114 4.30739 22.4616 4.30739Z" fill="url(#paint0_linear_174:1927)"/>
@@ -59,27 +59,27 @@
                       </defs>
                     </svg>
                   </span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Product</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Help</a>
-                    </li>
-                  </ul>
-                  <ul class="userLinks navbar-right d-block d-lg-none">
-                    <li><a href="#" class="signIn fw-bolder underline light">Sign In</a></li>
-                    <li><a href="#" class="btn btn-primary">Register</a></li>
-                  </ul>
-                  <ul class="userLinks navbar-right d-none d-lg-flex flex-column flex-lg-row">
-                    <li><a href="#" class="text-white fw-bolder underline light">Sign In</a></li>
-                    <li><a href="#" class="btn btn-white btn-sm"><span class="text-gradient">Register</span></a></li>
-                  </ul>
+                </a>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0  d-none">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Help</a>
+                      </li>
+                    </ul>
+                    <ul class="userLinks navbar-right d-block d-lg-none">
+                      <li><a href="#" class="signIn fw-bolder underline light">Sign In</a></li>
+                      <li><a href="#" class="btn btn-primary">Register</a></li>
+                    </ul>
+                    <ul class="userLinks navbar-right d-none d-lg-flex flex-column flex-lg-row">
+                      <li><a href="#" class="text-white fw-bolder underline light">Sign In</a></li>
+                      <li><a href="#" class="btn btn-white btn-sm"><span class="text-gradient">Register</span></a></li>
+                    </ul>
                 </div>
           </div>
         </nav>
@@ -286,7 +286,7 @@
                   <div class="row">
                     <div class="col-12 col-md-8">
                       <!-- Slider main container -->
-                      <div class="swiper" data-title="cryptoSlider">
+                      <div class="swiperx" data-title="cryptoSlider">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                           <!-- Slides -->
@@ -296,7 +296,7 @@
                     </div>
                     <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
                       <div class="cryptoSlider-pagination"></div>
-                      <!-- <button class="paginationButton">BTC Purchase</button> -->
+                      <button class="paginationButton">BTC Purchase</button>
                       <!-- <div class="cryptoSlider-pagination"></div> -->
                     </div>
                   </div>

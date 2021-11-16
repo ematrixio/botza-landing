@@ -174,7 +174,7 @@ $link-decoration: none;
     transform: translateY(0);
   }
 }
-@keyframes background {
+@keyframes backgroundAnimDesktop {
   0% {
     background-position-y: -100px;
     background-position-x: calc((100vw - 1600px) / 2 - 500px);
@@ -190,6 +190,24 @@ $link-decoration: none;
   100% {
     background-position-y: -100px;
     background-position-x: calc((100vw - 1600px) / 2 - 500px);
+  }
+}
+@keyframes backgroundAnimTablets {
+  0% {
+    background-position-y: 0;
+    background-position-x: -400px;
+  }
+  50% {
+    background-position-y: 100px;
+    background-position-x: 200px;
+  }
+  75% {
+    background-position-y: 150px;
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-y: 0;
+    background-position-x: -400px;
   }
 }
 @keyframes infinity {
@@ -446,7 +464,7 @@ header {
   min-height: 900px;
   background-position-y: -100px;
   background-position-x: calc((100vw - 1600px) / 2 - 500px);
-  animation: background 15s ease infinite;
+  animation: backgroundAnimDesktop 15s ease infinite;
 
 
   // navbar
@@ -710,6 +728,7 @@ header {
   }
 
   &.section-3 {
+
     h5 {
       letter-spacing: 0.05em;
     }
@@ -836,7 +855,10 @@ header {
 
   &.section-4 {
     // min-height: 100vh;
-    padding-top: 160px;
+    margin-top: 160px;
+    padding-bottom: 160px;
+    background: url('/assets/img/section-4-sliders/section-4-bg.png') no-repeat bottom left;
+    background-size: contain;
 
     .container {
       position: relative;
@@ -981,7 +1003,7 @@ header {
   }
   &.section-5 {
     .container {
-      padding-top: 160px;
+      // padding-top: 160px;
       padding-bottom: 160px;
       position: relative;
     }
@@ -1244,6 +1266,7 @@ header {
   background-size: 800px;
   background-position-y: 0;
   background-position-x: -400px;
+  animation: backgroundAnimTablets 15s ease infinite;
 
   section#header {
       background-size: 900px;
