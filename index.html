@@ -274,6 +274,7 @@
             </div>
         </div>
       </section>
+      <div class="section-4-5-bg">
       <section id="power-to-slack" class="section section-4">
         <div class="container">
           <div class="row text-center align-items-center justify-content-center section-heading">
@@ -283,122 +284,136 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-12 col-xl-3">
-                <div class="nav flex-row flex-xl-column justify-content-center justify-content-xl-start nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <button class="nav-link active" id="v-pills-crypto-tab" data-bs-toggle="pill" data-bs-target="#v-pills-crypto" role="tab" aria-controls="v-pills-crypto" aria-selected="true">Crypto</button>
-                  <button class="nav-link" id="v-pills-hr-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hr" role="tab" aria-controls="v-pills-hr" aria-selected="false">HR</button>
-                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-developers" role="tab" aria-controls="v-pills-messages" aria-selected="false">Developers</button>
-                  <button class="nav-link" id="v-pills-task-management-tab" data-bs-toggle="pill" data-bs-target="#v-pills-task-management" role="tab" aria-controls="v-pills-task-management" aria-selected="false">Task Management</button>
-                  <button class="nav-link" id="v-pills-webmaster-tab" data-bs-toggle="pill" data-bs-target="#v-pills-webmaster" role="tab" aria-controls="v-pills-webmaster" aria-selected="false">Webmaster</button>
+            <div class="col-12 col-xl-3" style="outline: 1px solid red;">
+                <div class="nav flex-row flex-xl-column justify-content-center justify-content-xl-start nav-pills category-tabs" id="v-pills-tab" role="tablist">
+                  <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#v-pills-crypto">Crypto</button>
+                  <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-hr">HR</button>
+                  <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-developers">Developers</button>
+                  <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-task-management">Task Management</button>
+                  <button class="nav-link" data-bs-toggle="pill" data-bs-target="#v-pills-webmaster">Webmaster</button>
                   <div class="nav-link nav-pill-active-bg"></div>
                 </div>
             </div>
             <!-- Gif Sliders -->
-            <div class="col-12 col-xl-9 gifSliders">
-              <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-crypto" role="tabpanel" aria-labelledby="v-pills-crypto-tab">
+            <div class="col-12 col-xl-9 gifSliders" style="outline: 1px solid red;">
+              <div class="tab-content">
+                <div class="tab-pane fade show active category-content" id="v-pills-crypto">
                   <!-- Crypto Slider -->
                   <div class="row">
                     <div class="col-12 col-md-8">
-                      <!-- Slider main container -->
-                      <div class="swiperx" data-title="cryptoSlider">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide" data-title="BTC Purchase"><img src="https://botza.io//assets/Videos/BTC-purchase.gif" /></div>
+                      <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade gifsContent show active" id="btc-purchases">
+                          <img src="https://botza.io/assets/gifs/btc_purchase.gif" />
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
-                      <div class="cryptoSlider-pagination"></div>
-                      <button class="paginationButton">BTC Purchase</button>
-                      <!-- <div class="cryptoSlider-pagination"></div> -->
+                    <div class="col-12 col-md-4 d-flex gifsNav">
+                      <div class="gifsNav_container">
+                        <div class="nav nav-pills" role="tablist">
+                          <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#btc-purchases">BTC Purchase</button>
+                        </div>
+                      </div>
+                      <div class="gifsNav_Bg"></div>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-hr" role="tabpanel" aria-labelledby="v-pills-hr-tab">
+                <div class="tab-pane fade category-content" id="v-pills-hr">
                   <!-- HR Slider -->
                   <div class="row">
                     <div class="col-12 col-md-8">
-                      <!-- Slider main container -->
-                      <div class="swipers" data-title="hrSlider">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide" data-title="HR Slide"><img src="https://botza.io/assets/img/comingSoon.png" class="comingSoonImg" /></div>
+                      <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade gifsContent show active" id="comingSoon">
+                          <img src="https://botza.io/assets/img/comingSoon.png" />
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
-                      <div class="hrSlider-pagination"></div>
-                    </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-developers" role="tabpanel" aria-labelledby="v-pills-developers-tab">
+                <div class="tab-pane fade category-content" id="v-pills-developers">
                   <!-- Developers Slider -->
                   <div class="row">
                     <div class="col-12 col-md-8">
-                      <!-- Slider main container -->
-                      <div class="swiper" data-title="developersSlider">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide" data-title="New Bug"><img src="https://botza.io/assets/Videos/new_bug.gif" /></div>
-                          <div class="swiper-slide" data-title="Delete Bug"><img src="https://botza.io/assets/Videos/delete_bug.gif" /></div>
-                          <div class="swiper-slide" data-title="New Bug"><img src="https://botza.io/assets/Videos/new_bug.gif" /></div>
-                          <div class="swiper-slide" data-title="Delete Bug"><img src="https://botza.io/assets/Videos/delete_bug.gif" /></div>
-                          <div class="swiper-slide" data-title="New Bug"><img src="https://botza.io/assets/Videos/new_bug.gif" /></div>
-                          <div class="swiper-slide" data-title="Delete Bug"><img src="https://botza.io/assets/Videos/delete_bug.gif" /></div>
+                      <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade gifsContent show active" id="new-bug">
+                          <img src="https://botza.io/assets/Videos/new_bug.gif" />
+                        </div>
+                        <div class="tab-pane fade gifsContent" id="delete-bug">
+                          <img src="https://botza.io/assets/Videos/delete_bug.gif" />
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
-                      <div class="developersSlider-pagination"></div>
+                    <div class="col-12 col-md-4 d-flex gifsNav">
+                      <div class="gifsNav_container">
+                        <div class="nav nav-pills" role="tablist">
+                          <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#new-bug">New Bug</button>
+                          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#delete-bug">Delete Bug</button>
+                        </div>
+                      </div>
+                      <div class="gifsNav_Bg"></div>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-task-management" role="tabpanel" aria-labelledby="v-pills-task-management-tab">
-                  <!-- SEO Tools Slider -->
+                <div class="tab-pane fade category-content" id="v-pills-task-management">
+                  <!-- Task Management Slider -->
                   <div class="row">
                     <div class="col-12 col-md-8">
-                      <!-- Slider main container -->
-                      <div class="swiper" data-title="taskManagementSlider">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide" data-title="New Task"><img src="https://botza.io/assets/Videos/new_task.gif" /></div>
-                          <div class="swiper-slide" data-title="Task Show"><img src="https://botza.io/assets/Videos/task_show.gif" /></div>
-                          <div class="swiper-slide" data-title="Task View"><img src="https://botza.io/assets/Videos/task_view.gif" /></div>
-                          <div class="swiper-slide" data-title="Task Delete"><img src="https://botza.io/assets/Videos/task_done.gif" /></div>
-                          <div class="swiper-slide" data-title="Task Done"><img src="https://botza.io/assets/Videos/task_done.gif" /></div>
+                      <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade gifsContent show active" id="new-task">
+                          <img src="https://botza.io/assets/Videos/new_task.gif" />
+                        </div>
+                        <div class="tab-pane fade gifsContent" id="task-show">
+                          <img src="https://botza.io/assets/Videos/task_show.gif" />
+                        </div>
+                        <div class="tab-pane fade gifsContent" id="task-view">
+                          <img src="https://botza.io/assets/Videos/task_view.gif" />
+                        </div>
+                        <div class="tab-pane fade gifsContent" id="task-delete">
+                          <img src="https://botza.io/assets/Videos/task_delete.gif" />
+                        </div>
+                        <div class="tab-pane fade gifsContent" id="task-done">
+                          <img src="https://botza.io/assets/Videos/task_done.gif" />
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
-                      <div class="taskManagementSlider-pagination"></div>
+                    <div class="col-12 col-md-4 d-flex gifsNav">
+                      <div class="gifsNav_container">
+                        <div class="nav nav-pills" role="tablist">
+                          <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#new-task">New Task</button>
+                          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#task-show">Task Show</button>
+                          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#task-view">Task View</button>
+                          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#task-delete">Task Delete</button>
+                          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#task-done">Task Done</button>
+                        </div>
+                      </div>
+                      <div class="gifsNav_Bg"></div>
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="v-pills-webmaster" role="tabpanel" aria-labelledby="v-pills-webmaster-tab">
+                <div class="tab-pane fade category-content" id="v-pills-webmaster">
                   <!-- Webmaster Slider -->
                   <div class="row">
                     <div class="col-12 col-md-8">
-                      <!-- Slider main container -->
-                      <div class="swiper"  data-title="webmasterSlider">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                          <!-- Slides -->
-                          <div class="swiper-slide" data-title="IP"><img src="https://botza.io/assets/Videos/IP.gif" /></div>
-                          <div class="swiper-slide" data-title="Ranking"><img src="https://botza.io/assets/Videos/website_ranking.gif" /></div>
-                          <div class="swiper-slide" data-title="Uptime"><img src="https://botza.io/assets/Videos/website_up.gif" /></div>
-                          <div class="swiper-slide" data-title="IP"><img src="https://botza.io/assets/Videos/IP.gif" /></div>
-                          <div class="swiper-slide" data-title="Ranking"><img src="https://botza.io/assets/Videos/website_ranking.gif" /></div>
-                          <div class="swiper-slide" data-title="Uptime"><img src="https://botza.io/assets/Videos/website_up.gif" /></div>
+                      <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade gifsContent show active" id="ip">
+                          <img src="https://botza.io/assets/Videos/IP.gif" />
+                        </div>
+                        <div class="tab-pane fade gifsContent" id="ranking">
+                          <img src="https://botza.io/assets/Videos/website_ranking.gif" />
+                        </div>
+                        <div class="tab-pane fade gifsContent" id="uptime">
+                          <img src="https://botza.io/assets/Videos/website_up.gif" />
                         </div>
                       </div>
                     </div>
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-center p-0 mobile-pagination-container">
-                      <div class="webmasterSlider-pagination"></div>
+                    <div class="col-12 col-md-4 d-flex gifsNav">
+                      <div class="gifsNav_container">
+                        <div class="nav nav-pills" role="tablist">
+                          <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#ip">IP</button>
+                          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#ranking">Ranking</button>
+                          <button class="nav-link" data-bs-toggle="pill" data-bs-target="#uptime">Uptime</button>
+                        </div>
+                      </div>
+                      <div class="gifsNav_Bg"></div>
                     </div>
                   </div>
                 </div>
@@ -661,7 +676,7 @@
         </div>
         </footer>
       </section>
-
+      </div> <!-- section-4-5-bg -->
     <nav id="fp-nav" class="fp-right d-none d-md-block">
       <ul class="nav">
         <li class="nav-item">

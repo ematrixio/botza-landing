@@ -86,15 +86,8 @@ macbookSlider.on('slideChangeTransitionStart', function () {
 });
 
 // section 4 category tabs
-let activeTab = null;
-const tabs = document.querySelectorAll('.section-4 .nav-pills button[data-bs-toggle="pill"]');
-tabs.forEach(tab => {
-   tab.addEventListener('show.bs.tab', event => {
-        activeTab = event.target;
-        setActiveTab(activeTab);
-
-   });
-});
+let activeTab      = null;
+let activeSlideNav = null;
 
 function setActiveTab(activeTab)
 {
@@ -102,12 +95,51 @@ function setActiveTab(activeTab)
   {
     let top  = $(activeTab).position().top;
     let left = $(activeTab).position().left;
-    document.querySelector('.nav-pill-active-bg').style.transform = `translate(${left}px, ${top}px)`;
+    document.querySelector('.section-4 .category-tabs .nav-pill-active-bg').style.transform = `translate(${left}px, ${top}px)`;
   }
 }
-
 // section 4 gif carousels
 
+function setInitialGifSlide()
+{
+  // select the middle nav item
+  let allGifs   = document.querySelectorAll('.section-4 .category-content.active button.nav-link');
+  let middleGif = Math.ceil(allGifs.length / 2) - 1;
+  activeSlideNav = allGifs[middleGif];
+  let activeGif = new bootstrap.Tab(activeSlideNav);
+  activeGif.show();
+  allGifs = null;
+}
+
+function setActiveGifSlide()
+{
+  console.log('function positions');
+  // if (activeSlideNav == null)
+  //   return false;
+
+  activeSlideNav = $('.section-4 .gifSliders .category-content.active .gifsNav .nav-pills button.nav-link.active')
+
+  let navContainer = activeSlideNav.parent().parent() // .gifsNav_container
+  let navPills     = $(navContainer).find('.nav-pills');
+
+    // console.log('getting positions');
+    // console.log(activeSlideNav.position().top);
+    // console.log(activeSlideNav.outerHeight());
+    // console.log(navPills.outerHeight());
+    // console.log(navContainer.outerHeight());
+
+  let scrollToT =- activeSlideNav.position().top + navContainer.outerHeight() / 2 - activeSlideNav.outerHeight(true) / 2;
+  let scrollToL =- activeSlideNav.position().left + navContainer.outerWidth() / 2 - activeSlideNav.outerWidth(true) / 2;
+
+  console.log('setting positions');
+  console.log(scrollToT);
+  navPills.css('transform', `translate(${scrollToL}px, ${scrollToT}px)`);
+
+}
+/* swiper carousel category tabs *
+*
+*
+*
 // get total slides
 function initialSlide(slider)
 {
@@ -205,15 +237,16 @@ function getSliderDirection() {
   return direction;
 }
 
+*
+*/
+
 // preload assets
 const assets = [
   '/assets/img/loading-macbook.png',
-  '/assets/img/bg vector - header.svg',
-  '/assets/img/bg-diffused.svg',
+  '/assets/img/bg vector - header.png',
   '/assets/img/section-2/section-2-bg.png',
-  '/assets/img/bg-diffused.svg',
+  '/assets/img/bg-diffused@2x.png',
   '/assets/img/section-2/Skate.png',
-  '/assets/img/section-3/bg gradient-sec3.svg',
   '/assets/img/section-3/macbook-icons/1o.svg',
   '/assets/img/section-3/macbook-icons/1f.svg',
   '/assets/img/section-3/macbook-icons/2o.svg',
@@ -234,8 +267,55 @@ assets.forEach((asset, index) => {
 
 // set the position for the first active tab
 window.onload = function() {
-  const initialTab = document.querySelector('.section-4 .nav-pills button[data-bs-toggle="pill"]');
-  setActiveTab(initialTab);
+  // set the initial selected category tab
+
+  activeTab = $('.category-tabs button.nav-link.active');
+  setActiveTab(activeTab);
+
+  // setInitialGifSlide();
+
+  let allGifs;
+  let middleGif;
+  let activeGif;
+
+  document.querySelectorAll('.section-4 .gifSliders .category-content').forEach (slider => {
+    allGifs   = $(slider).find('button.nav-link');
+    middleGif = Math.ceil(allGifs.length / 2) - 1;
+
+    if (allGifs[middleGif] == undefined)
+      return;
+
+    activeGif = new bootstrap.Tab(allGifs[middleGif]);
+    activeGif.show();
+    allGifs = null;
+  })
+
+  // activeSlideNav = $('.section-4 .gifSliders .category-content.active .gifsNav .nav-pills button.nav-link.active');
+  // setActiveGifSlide();
+
+  const tabs = document.querySelectorAll('.section-4 .category-tabs button.nav-link');
+  tabs.forEach(tab => {
+
+     tab.addEventListener('shown.bs.tab', event => {
+          console.log('switching category tab');
+          activeTab = event.target;
+          setActiveTab(activeTab);
+          setActiveGifSlide();
+     });
+  });
+
+  // set the initial gifslider active link
+  document.querySelectorAll('.section-4 .gifSliders .category-content .gifsNav .nav-pills button.nav-link').forEach(tab => {
+
+     tab.addEventListener('shown.bs.tab', event => {
+          console.log('testing');
+          activeSlideNav = event.target;
+          setActiveGifSlide();
+
+     });
+  });
+
+  // pre-loader
   setTimeout(function(){
     // console.log("loaded");
       document.getElementById("loader-wrapper").style.opacity = 0;
@@ -253,7 +333,7 @@ window.onload = function() {
 // that the user is done resizing the browser
 var rtime;
 var timeout = false;
-var delta = 500;
+var delta = 200;
 window.addEventListener('resize', function() {
 
     rtime = new Date();
@@ -269,6 +349,9 @@ function resizeend() {
     } else {
         timeout = false;
 
+        /*
+        *
+
         // category slider direction update for mobile screens
 
         Crousels.forEach(Carousel => {
@@ -276,14 +359,17 @@ function resizeend() {
             Sliders[Carousel].changeDirection(getSliderDirection());
         });
 
+        *
+        */
+
         // set active tab margins again after browser reset
         setActiveTab(activeTab);
 
-        // re-play timeline animation for screen size changes
-        // let currSection = Scroller.getActiveSection().index;
-        // if (currSection == 4)
-          reSizeAnimation();
-          // setPaths();
+        // set active gifslider active marker
+        setActiveGifSlide()
+
+        // re-draw timeline arrow according to tablet / mobile screensizes
+        reSizeAnimation();
     }
 }
 
@@ -382,7 +468,10 @@ function setPaths() {
   else
   {
     // take a u-turn
-    path2.setAttribute("d", `M${x2} ${y2} ${x2+200} ${y2} ${x3+200} ${y3} ${x3} ${y3}`);
+    if ($(window).width() > 992)
+      path2.setAttribute("d", `M${x2} ${y2} ${x2+200} ${y2} ${x3+200} ${y3} ${x3} ${y3}`);
+    else
+      path2.setAttribute("d", `M${x2} ${y2} ${x2+150} ${y2} ${x3+150} ${y3} ${x3} ${y3}`);
   }
 
   path3.setAttribute("d", `M${x3} ${y3} ${x4} ${y4}`);
