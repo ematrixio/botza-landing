@@ -484,6 +484,12 @@ function runAnimation()
   //   reSizeAnimation();
   //   return false;
   // }
+  if ($(window).width() < 992)
+    pathAnim.set("svg#arrow-path #arrow", {scale: 0.8})
+
+  if ($(window).width() < 576)
+    pathAnim.set("svg#arrow-path #arrow", {scale: 0.7})
+
   pathAnim
   .set("svg#arrow-path .path", {drawSVG: false})
   .set("svg#arrow-path #arrow", {opacity: 0})
@@ -495,7 +501,6 @@ function runAnimation()
   .set(gui_text, {fontWeight: "600", color: "#767676"})
   .set(alexa_text, {fontWeight: "600", color: "#767676"})
   .set(botza_text, {fontWeight: "600", color: "#767676"})
-  .add()
   .to(cli, {
       scale: 1,
       opacity: 1,
@@ -579,7 +584,7 @@ function runAnimation()
     pathAnim.to(path2,
       {
         duration: 0.6,
-        ease: 'power',
+        ease: 'power2',
         drawSVG: true
       },
       "<0%"
