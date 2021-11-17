@@ -1264,6 +1264,9 @@ header {
     }
     .headerSliderHeadings {
       margin-left: 80px;
+      .swiper {
+        height: 150px;
+      }
     }
   }
   .section.section-3 {
