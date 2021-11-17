@@ -324,6 +324,8 @@ window.onload = function() {
 
       // run header h1 text animations
       headerTextAnimations();
+
+      runAnimation();
   }, 500);
 
 };
@@ -416,9 +418,6 @@ cli_icon   = $(".timeline .cli > .icon");
 gui_icon   = $(".timeline .gui > .icon");
 alexa_icon = $(".timeline .alexa > .icon");
 botza_icon = $(".timeline .botza > .icon");
-
-
-runAnimation();
 
 
 
