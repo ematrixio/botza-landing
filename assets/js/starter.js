@@ -384,7 +384,7 @@ gsap.registerPlugin(ScrollTrigger)
 let pathAnim = new gsap.timeline();
 
 let tablet    = false;
-let hasPlayed = false;
+// let hasPlayed = false;
 let cli,
     gui,
     alexa,
@@ -651,19 +651,12 @@ function runAnimation()
     end: "bottom 70%", // end after scrolling 500px beyond the start
     // scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
   });
-
-  // hasPlayed = true;
 }
 
 function reSizeAnimation ()
 {
-    // if (!hasPlayed)
-    //   return false;
-
     pathAnim.kill();
 
-
-    // $("svg#arrow-path #arrow").css("transform", `none`);
     pathAnim = new gsap.timeline();
     runAnimation();
 }
