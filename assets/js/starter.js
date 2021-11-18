@@ -768,12 +768,14 @@ function sendRequest(email, type) {
   }
 }
 
-$(".inviteButton").on("click", (e) => {
-  let userEmail = $(".userEmail").val();
+$("#inviteButton").on("click", (e) => {
+  e.preventDefault();
+  let userEmail = $("#userEmail").val();
   sendRequest(userEmail, "1");
 });
 
 $(".inviteButton2").on("click", (e) => {
+  e.preventDefault();
   let userEmail = $(".userEmail2").val();
   sendRequest(userEmail, "2");
 });

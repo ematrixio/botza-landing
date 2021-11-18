@@ -566,29 +566,28 @@ header {
       //   z-index: -1;
       // }
     }
-  }
-}
+    .swiper.headerSlider {
+      height: 420px;
+      margin-right: -104px;
 
-.swiper.headerSlider {
-  height: 420px;
-  margin-right: -104px;
-
-  .swiper-slide
-  {
-    display: flex;
-    img {
-      width: 100%;
-      margin: auto;
-      display: block;
-      object-fit: contain;
+      .swiper-slide
+      {
+        display: flex;
+        img {
+          width: 100%;
+          margin: auto;
+          display: block;
+          object-fit: contain;
+        }
+      }
     }
-  }
-}
 
-.headerSliderHeadings {
-  margin-left: 104px;
-  .swiper {
-    height: 100px;
+    .headerSliderHeadings {
+      margin-left: 104px;
+      .swiper {
+        height: 100px;
+      }
+    }
   }
 }
 
@@ -1257,15 +1256,16 @@ header {
     background-position-y: 10%;
     background-position-x: -300px;
 
-
-    .swiper.headerSlider {
-      margin-right: -80px;
-      height: 320px;
-    }
-    .headerSliderHeadings {
-      margin-left: 80px;
-      .swiper {
-        height: 150px;
+    section#header {
+      .swiper.headerSlider {
+        margin-right: -80px;
+        height: 320px;
+      }
+      .headerSliderHeadings {
+        margin-left: 80px;
+        .swiper {
+          height: 150px;
+        }
       }
     }
   }
@@ -1300,34 +1300,26 @@ header {
   animation: backgroundAnimTablets 15s ease infinite;
 
   section#header {
-      background-size: 900px;
-      background-position-y: calc(50% + 100px);
-      background-position-x: calc(100% + 300px);
+    background-size: 900px;
+    background-position-y: calc(50% + 100px);
+    background-position-x: calc(100% + 300px);
 
-      h1 {
-        margin-top: 0;
+    h1 {
+      margin-top: 0;
+    }
+
+    .swiper.headerSlider {
+      height: 360px;
+      margin: auto;
+
+      .swiper-slide img {
+        height: 100%;
+        width: auto;
       }
-
-      .container {
-        // &::before {
-        //   right: -50%;
-        //   top: 20%;
-        //   width: 100%;
-        // }
-
-          .swiper.headerSlider {
-            height: 360px;
-            margin: auto;
-
-            .swiper-slide img {
-              height: 100%;
-              width: auto;
-            }
-          }
-          .headerSliderHeadings {
-            margin: auto;
-          }
-      }
+    }
+    .headerSliderHeadings {
+      margin: auto;
+    }
   }
 }
   .section {
@@ -1513,17 +1505,18 @@ header {
           }
         }
       }
+      section#header {
+        // .swiper.headerSlider {
+        //   margin: auto;
+        // }
+        .headerSliderHeadings {
+          .swiper {
+            height: 80px;
+          }
+        }
+      }
     }
 
-  // .swiper.headerSlider {
-  //   margin: auto;
-  // }
-
-  .headerSliderHeadings {
-    .swiper {
-      height: 80px;
-    }
-  }
   .section {
     &.section-2 {
       .slack-demo {
@@ -1582,13 +1575,11 @@ header {
 {
   header {
     section#header {
-      .container {
-        .swiper.headerSlider {
+      .swiper.headerSlider {
 
-          .swiper-slide img {
-            height: auto;
-            width: 100%;
-          }
+        .swiper-slide img {
+          height: auto;
+          width: 100%;
         }
       }
     }
@@ -1706,39 +1697,29 @@ header {
 
       section#header {
         // padding-top: 40px;
-        background-size: 500px;
-        background-position-y: calc(50% + 150px);
+        background-size: 440px;
+        background-position-y: calc(50% + 120px);
         background-position-x: calc(100% + 200px);
+
+        .swiper.headerSlider {
+          height: 160px;
+
+          .swiper-slide img {
+            height: 100%;
+            width: auto;
+          }
+        }
+
+        .headerSliderHeadings {
+          .swiper {
+            height: 70px;
+          }
+          h4, h3 {
+            @include font-size(1.3rem);
+          }
+        }
       }
     }
-  // section#header {
-    // .container {
-    //   &::before {
-    //     height: 450px;
-    //     width: 100%;
-    //     top: 20%;
-    //     right: -30%;
-    //   }
-    // }
-  // }
-
-  .swiper.headerSlider {
-    height: 160px;
-
-    .swiper-slide img {
-      height: 100%;
-      width: auto;
-    }
-  }
-
-  .headerSliderHeadings {
-    .swiper {
-      height: 70px;
-    }
-    h4, h3 {
-      @include font-size(1.3rem);
-    }
-  }
   .section {
     .section-heading {
       margin-bottom: 40px;
