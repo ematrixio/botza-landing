@@ -1031,6 +1031,7 @@ header {
       }
     }
     svg#arrow-path {
+      will-change: transform, opacity, top, left;
       position: absolute;
       width: 100%;
       height: 100%;
@@ -1042,6 +1043,7 @@ header {
       #arrow {
         stroke: white;
         stroke-width: 20px;
+        will-change: transform, opacity, top, left;
         fill: none;
       }
 
@@ -1057,6 +1059,7 @@ header {
       .botza {
         opacity: 0;
         margin-bottom: 50px;
+        will-change: opacity;
       }
 
       .icon {
